@@ -205,6 +205,15 @@ class Initiate(object):
                 'git config --global push.default simple').execute()
             Helpers.Command('git checkout master').execute()
 
+            Helpers.Command(
+                'sudo chown -R travis:travis %s' %
+                (environ['TRAVIS_BUILD_DIR']),
+                False).execute()
+            Helpers.Command(
+                'sudo chmod 755 -R travis:travis %s' %
+                (environ['TRAVIS_BUILD_DIR']),
+                False).execute()
+
             regex_new_test = r'Launch\stest'
 
             if not path.isfile(
@@ -438,7 +447,8 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
             (output, error) = process.communicate()
 
             if process.returncode != 0:
-                return self.decode_output(error)
+                print(self.decode_output(error))
+                exit(1)
             return self.decode_output(output)
 
     class Regex(object):  # pylint: disable=too-few-public-methods
