@@ -210,7 +210,7 @@ class Initiate(object):
                 (environ['TRAVIS_BUILD_DIR']),
                 False).execute()
             Helpers.Command(
-                'sudo chmod 755 -R travis:travis %s' %
+                'sudo chmod 755 -R %s' %
                 (environ['TRAVIS_BUILD_DIR']),
                 False).execute()
 
