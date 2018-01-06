@@ -1,28 +1,10 @@
 {
-    "currently_under_test": false,
-    "custom_pyfunceble_config": {},
-    "days_until_next_test": 0.0,
-    "finish_datetime": "2023-11-04T05:01:54.561554",
-    "finish_timestamp": 1699074114.561554,
-    "last_download_datetime": "2020-12-28T00:50:21.372676",
-    "last_download_timestamp": 1609116621.372676,
-    "latest_part_finish_datetime": "2023-11-04T05:01:54.561554",
-    "latest_part_finish_timestamp": 1699074114.561554,
-    "latest_part_start_datetime": "2020-12-28T00:50:21.380027",
-    "latest_part_start_timestamp": 1609116621.380027,
-    "live_update": true,
-    "name": "repository-structure",
-    "own_management": false,
-    "ping": [
-        "@funilrys"
-    ],
-    "platform_container_id": null,
-    "platform_description": "Imported from Dead-Hosts legacy infrastructure.",
-    "platform_optout": false,
-    "platform_remote_source_id": null,
-    "platform_shortname": "repository-structure",
-    "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/examples/lists/simple",
-    "repo": "dead-hosts/repository-structure",
-    "start_datetime": "2020-12-28T00:50:21.375438",
-    "start_timestamp": 1609116621.375438
+    "autosave_minutes": "10",
+    "commit_autosave_message": "",
+    "days_until_next_test": "5",
+    "last_test": "0",
+    "list_name": "",
+    "name": "",
+    "raw_link": "t",
+    "stable": "0"
 }
