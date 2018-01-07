@@ -208,11 +208,11 @@ class Initiate(object):
             Helpers.Command(
                 'sudo chown -R travis:travis %s' %
                 (environ['TRAVIS_BUILD_DIR']),
-                False).execute()
+                True).execute()
             Helpers.Command(
                 'sudo chmod 755 %s' %
                 (environ['TRAVIS_BUILD_DIR']),
-                False).execute()
+                True).execute()
 
             regex_new_test = r'Launch\stest'
 
