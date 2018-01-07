@@ -464,8 +464,7 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
             (output, error) = process.communicate()
 
             if process.returncode != 0:
-                print(self.decode_output(error))
-                exit(1)
+                return self.decode_output(error)
             return self.decode_output(output)
 
     class Regex(object):  # pylint: disable=too-few-public-methods
