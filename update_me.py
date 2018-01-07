@@ -205,14 +205,7 @@ class Initiate(object):
                 'git config --global push.default simple').execute()
             Helpers.Command('git checkout master').execute()
 
-            Helpers.Command(
-                'sudo chown -R travis:travis %s' %
-                (environ['TRAVIS_BUILD_DIR']),
-                False).execute()
-            Helpers.Command(
-                'sudo chmod 755 %s' %
-                (environ['TRAVIS_BUILD_DIR']),
-                False).execute()
+            self.travis_permissions()
 
             regex_new_test = r'Launch\stest'
 
@@ -239,6 +232,29 @@ class Initiate(object):
                         True).execute()
 
     @classmethod
+    def travis_permissions(cls):
+        """
+        Set permissions in order to avoid issues before commiting.
+        """
+
+        build_dir = environ['TRAVIS_BUILD_DIR']
+        commands = [
+            'chown -R travis:travis ' + build_dir,
+            'chgrp -R travis ' + build_dir,
+            'chmod -R g+rwX ' + build_dir,
+            'chmod 777 -Rf ' + build_dir + Settings.dir_separator + '.git',
+            'find ' + build_dir + " -type d -exec chmod g+x '{}'"
+        ]
+
+        for command in commands:
+            Helpers.Command(command).execute()
+
+        if Helpers.Command('git config core.sharedRepository').execute() == '':
+            Helpers.Command('git config core.sharedRepository group').execute()
+
+        return
+
+    @classmethod
     def list_file(cls):
         """
         Download Settings.raw_link.
@@ -263,6 +279,7 @@ class Initiate(object):
         # pylint: disable=invalid-name
         PyFunceble_path = Settings.current_directory + \
             'PyFunceble.py'
+
 
         command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'sudo python3 %s -v && ' % (tool_path)
@@ -293,14 +310,7 @@ class Initiate(object):
                     'continue.json') or int(
                         strftime('%s')) >= retest_date:
 
-            Helpers.Command(
-                'sudo chown -R travis:travis %s' %
-                (environ['TRAVIS_BUILD_DIR']),
-                False).execute()
-            Helpers.Command(
-                'sudo chmod 755 %s' %
-                (environ['TRAVIS_BUILD_DIR']),
-                False).execute()
+            self.travis_permissions()
 
             print(Helpers.Command(command_to_execute).execute())
             Settings.informations['last_test'] = strftime('%s')
