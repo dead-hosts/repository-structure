@@ -182,6 +182,7 @@ class Initiate(object):
                     download_link = Settings.PyFunceble[file].replace(
                         'dev', 'master')
 
+                self.travis_permissions()
                 Helpers.Download(download_link, file_path).link()
                 stats = stat(file_path)
                 chmod(file_path, stats.st_mode | S_IEXEC)
@@ -421,7 +422,6 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
 
                 del request
 
-                Initiate().travis_permissions()
                 return True
             return False
 
