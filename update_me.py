@@ -421,6 +421,7 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
 
                 del request
 
+                Initiate().travis_permissions()
                 return True
             return False
 
