@@ -148,13 +148,13 @@ class Initiate(object):
             False).execute()
         Helpers.Command(
             'git config --global user.email "%s"' %
-            (environ['GIT_EMAIL'])).execute()
+            (environ['GIT_EMAIL']), False).execute()
         Helpers.Command(
             'git config --global user.name "%s"' %
-            (environ['GIT_NAME'])).execute()
+            (environ['GIT_NAME']), False).execute()
         Helpers.Command(
             'git config --global push.default simple').execute()
-        Helpers.Command('git checkout master').execute()
+        Helpers.Command('git checkout master', True).execute()
 
         self.travis_permissions()
 
@@ -250,7 +250,7 @@ class Initiate(object):
         ]
 
         for command in commands:
-            Helpers.Command(command, True).execute()
+            Helpers.Command(command, False).execute()
 
         if Helpers.Command('git config core.sharedRepository').execute() == '':
             Helpers.Command(
@@ -285,14 +285,14 @@ class Initiate(object):
         PyFunceble_path = Settings.current_directory + \
             'PyFunceble.py'
 
-        command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
-        command_to_execute += 'sudo python3 %s -v && ' % (tool_path)
-        command_to_execute += 'sudo python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
-            tool_path, Settings.autosave_minutes, Settings.commit_autosave_message, Settings.commit_autosave_message)  # pylint: disable=line-too-long
+        command_to_execute = 'python3 %s --dev -u && ' % (tool_path)
+        command_to_execute += 'python3 %s -v && ' % (tool_path)
         command_to_execute += 'export TRAVIS_BUILD_DIR=%s && ' % (
             environ['TRAVIS_BUILD_DIR'])
-        command_to_execute += 'sudo python3 %s -v && ' % (PyFunceble_path)
-        command_to_execute += 'sudo python3 %s --travis -a -ex --plain --split -t 2 -f %s ' % (
+        command_to_execute += 'python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
+            tool_path, Settings.autosave_minutes, Settings.commit_autosave_message, Settings.commit_autosave_message)  # pylint: disable=line-too-long
+        command_to_execute += 'python3 %s -v && ' % (PyFunceble_path)
+        command_to_execute += 'python3 %s --travis -a -ex --plain --split -t 2 -f %s ' % (
             PyFunceble_path, Settings.file_to_test)
 
         if Settings.days_until_next_test >= 1 and Settings.last_test != 0:
