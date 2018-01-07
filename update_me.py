@@ -248,10 +248,12 @@ class Initiate(object):
         ]
 
         for command in commands:
-            Helpers.Command(command).execute()
+            Helpers.Command(command, True).execute()
 
         if Helpers.Command('git config core.sharedRepository').execute() == '':
-            Helpers.Command('git config core.sharedRepository group').execute()
+            Helpers.Command(
+                'git config core.sharedRepository group',
+                True).execute()
 
         return
 
