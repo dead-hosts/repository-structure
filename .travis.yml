@@ -18,10 +18,12 @@ cache:
   - apt
   - pip
 
+sudo: required
+
 before_install:
   - sudo apt-get -y install python3-pip
   - sudo apt-get -y install dos2unix
-  
+
 script:
   - export TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR}
   - export GH_TOKEN=${GH_TOKEN}
