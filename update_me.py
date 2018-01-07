@@ -139,6 +139,25 @@ class Initiate(object):
     """
 
     def __init__(self):  # pylint: disable=too-many-branches
+        Helpers.Command('git remote rm origin', False).execute()
+        Helpers.Command(
+            "git remote add origin https://" +
+            "%s@github.com/%s.git" %
+            (environ['GH_TOKEN'],
+             environ['TRAVIS_REPO_SLUG']),
+            False).execute()
+        Helpers.Command(
+            'git config --global user.email "%s"' %
+            (environ['GIT_EMAIL'])).execute()
+        Helpers.Command(
+            'git config --global user.name "%s"' %
+            (environ['GIT_NAME'])).execute()
+        Helpers.Command(
+            'git config --global push.default simple').execute()
+        Helpers.Command('git checkout master').execute()
+
+        self.travis_permissions()
+
         if path.isfile(Settings.repository_info):
             content = Helpers.File(Settings.repository_info).read()
             Settings.informations = Helpers.Dict().from_json(content)
@@ -182,31 +201,14 @@ class Initiate(object):
                     download_link = Settings.PyFunceble[file].replace(
                         'dev', 'master')
 
-                self.travis_permissions()
                 Helpers.Download(download_link, file_path).link()
+
+                self.travis_permissions()
+
                 stats = stat(file_path)
                 chmod(file_path, stats.st_mode | S_IEXEC)
 
             Settings.file_to_test += Settings.list_name
-
-            Helpers.Command('git remote rm origin', False).execute()
-            Helpers.Command(
-                "git remote add origin https://" +
-                "%s@github.com/%s.git" %
-                (environ['GH_TOKEN'],
-                 environ['TRAVIS_REPO_SLUG']),
-                False).execute()
-            Helpers.Command(
-                'git config --global user.email "%s"' %
-                (environ['GIT_EMAIL'])).execute()
-            Helpers.Command(
-                'git config --global user.name "%s"' %
-                (environ['GIT_NAME'])).execute()
-            Helpers.Command(
-                'git config --global push.default simple').execute()
-            Helpers.Command('git checkout master').execute()
-
-            self.travis_permissions()
 
             regex_new_test = r'Launch\stest'
 
@@ -257,8 +259,7 @@ class Initiate(object):
 
         return
 
-    @classmethod
-    def list_file(cls):
+    def list_file(self):
         """
         Download Settings.raw_link.
         """
@@ -268,6 +269,8 @@ class Initiate(object):
                 'dos2unix ' +
                 Settings.file_to_test,
                 False).execute()
+
+            self.travis_permissions()
             return True
         raise Exception(
             'Unable to download the the file. Please check the link.')
@@ -323,6 +326,8 @@ class Initiate(object):
                 Settings.permanent_license_link,
                 Settings.current_directory +
                 'LICENSE').link()
+
+            self.travis_permissions()
 
 
 class Helpers(object):  # pylint: disable=too-few-public-methods
