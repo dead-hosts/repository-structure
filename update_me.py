@@ -139,6 +139,16 @@ class Initiate(object):
     """
 
     def __init__(self):  # pylint: disable=too-many-branches
+        self.travis()
+        self.travis_permissions()
+        self.settings()
+
+    @classmethod
+    def travis(cls):
+        """
+        Initiate Travis CI settings.
+        """
+
         Helpers.Command('git remote rm origin', False).execute()
         Helpers.Command(
             "git remote add origin https://" +
@@ -156,7 +166,12 @@ class Initiate(object):
             'git config --global push.default simple').execute()
         Helpers.Command('git checkout master', True).execute()
 
-        self.travis_permissions()
+        return
+
+    def settings(self):
+        """
+        Read info.json and retranscript its data into the script.
+        """
 
         if path.isfile(Settings.repository_info):
             content = Helpers.File(Settings.repository_info).read()
@@ -232,7 +247,7 @@ class Initiate(object):
                     Helpers.Command(
                         Settings.current_directory +
                         'tool.py -c',
-                        True).execute()
+                        False).execute()
 
     @classmethod
     def travis_permissions(cls):
@@ -244,7 +259,6 @@ class Initiate(object):
         commands = [
             'sudo chown -R travis:travis %s' % (build_dir),
             'sudo chgrp -R travis %s' % (build_dir),
-            'sudo chmod -R 755 %s' % (build_dir),
             'sudo chmod -R g+rwX %s' % (build_dir),
             'sudo chmod 777 -Rf %s.git' % (build_dir + directory_separator),
             r"sudo find %s -type d -exec chmod g+x '{}' \;" % (build_dir)
@@ -256,7 +270,7 @@ class Initiate(object):
         if Helpers.Command('git config core.sharedRepository').execute() == '':
             Helpers.Command(
                 'git config core.sharedRepository group',
-                True).execute()
+                False).execute()
 
         return
 
@@ -288,8 +302,7 @@ class Initiate(object):
 
         command_to_execute = 'python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'python3 %s -v && ' % (tool_path)
-        command_to_execute += 'export TRAVIS_BUILD_DIR=%s && ' % (
-            environ['TRAVIS_BUILD_DIR'])
+        command_to_execute += 'export TRAVIS_BUILD_DIR=%s && ' % environ['TRAVIS_BUILD_DIR']
         command_to_execute += 'python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
             tool_path, Settings.autosave_minutes, Settings.commit_autosave_message, Settings.commit_autosave_message)  # pylint: disable=line-too-long
         command_to_execute += 'python3 %s -v && ' % (PyFunceble_path)
