@@ -242,7 +242,7 @@ class Initiate(object):
             'chown -R travis:travis ' + build_dir,
             'chgrp -R travis ' + build_dir,
             'chmod -R g+rwX ' + build_dir,
-            'chmod 777 -Rf ' + build_dir + Settings.dir_separator + '.git',
+            'chmod 777 -Rf ' + build_dir + directory_separator + '.git',
             'find ' + build_dir + " -type d -exec chmod g+x '{}'"
         ]
 
@@ -269,8 +269,7 @@ class Initiate(object):
         raise Exception(
             'Unable to download the the file. Please check the link.')
 
-    @classmethod
-    def PyFunceble(cls):  # pylint: disable=invalid-name
+    def PyFunceble(self):  # pylint: disable=invalid-name
         """
         Install and run PyFunceble.
         """
@@ -279,7 +278,6 @@ class Initiate(object):
         # pylint: disable=invalid-name
         PyFunceble_path = Settings.current_directory + \
             'PyFunceble.py'
-
 
         command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'sudo python3 %s -v && ' % (tool_path)
