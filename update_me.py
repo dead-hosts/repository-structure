@@ -447,7 +447,7 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
             """
             if to_decode is not None:
                 return to_decode.decode(self.decode_type)
-            return '\n'
+            return None
 
         def execute(self):
             """Execute the given command."""
@@ -464,7 +464,11 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
             (output, error) = process.communicate()
 
             if process.returncode != 0:
-                return self.decode_output(error)
+                decoded = self.decode_output(error)
+                if decoded is not None:
+                    print(decoded)
+                    exit(1)
+                return decoded
             return self.decode_output(output)
 
     class Regex(object):  # pylint: disable=too-few-public-methods
