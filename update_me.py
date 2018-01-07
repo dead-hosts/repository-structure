@@ -470,6 +470,10 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
                     return 'Unkown error. for %s' % (self.command)
 
                 print(decoded)
+                print(
+                    Helpers.Command(
+                        'ls -al %s' %
+                        environ('TRAVIS_BUILD_DIR')).execute())
                 exit(1)
             return self.decode_output(output)
 
