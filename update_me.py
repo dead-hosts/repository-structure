@@ -264,11 +264,6 @@ class Initiate(object):
         PyFunceble_path = Settings.current_directory + \
             'PyFunceble.py'
 
-        print(Helpers.Command(
-            'ls -al %s' %
-            (environ['TRAVIS_BUILD_DIR']),
-            True).execute())
-        exit(1)
         command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'sudo python3 %s -v && ' % (tool_path)
         command_to_execute += 'sudo python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
@@ -297,6 +292,15 @@ class Initiate(object):
                     directory_separator +
                     'continue.json') or int(
                         strftime('%s')) >= retest_date:
+
+            Helpers.Command(
+                'sudo chown -R travis:travis %s' %
+                (environ['TRAVIS_BUILD_DIR']),
+                False).execute()
+            Helpers.Command(
+                'sudo chmod 755 %s' %
+                (environ['TRAVIS_BUILD_DIR']),
+                False).execute()
 
             print(Helpers.Command(command_to_execute).execute())
             Settings.informations['last_test'] = strftime('%s')
