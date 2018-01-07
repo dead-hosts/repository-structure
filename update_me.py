@@ -465,10 +465,11 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
 
             if process.returncode != 0:
                 decoded = self.decode_output(error)
-                if decoded is not None:
-                    print(decoded)
-                    exit(1)
-                return decoded
+
+                if decoded is None:
+                    return None
+                print(decoded)
+                return exit(1)
             return self.decode_output(output)
 
     class Regex(object):  # pylint: disable=too-few-public-methods
