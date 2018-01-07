@@ -208,11 +208,11 @@ class Initiate(object):
             Helpers.Command(
                 'sudo chown -R travis:travis %s' %
                 (environ['TRAVIS_BUILD_DIR']),
-                True).execute()
+                False).execute()
             Helpers.Command(
                 'sudo chmod 755 %s' %
                 (environ['TRAVIS_BUILD_DIR']),
-                True).execute()
+                False).execute()
 
             regex_new_test = r'Launch\stest'
 
@@ -264,6 +264,11 @@ class Initiate(object):
         PyFunceble_path = Settings.current_directory + \
             'PyFunceble.py'
 
+        print(Helpers.Command(
+            'ls -al %s' %
+            (environ['TRAVIS_BUILD_DIR']),
+            True).execute())
+        exit(1)
         command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'sudo python3 %s -v && ' % (tool_path)
         command_to_execute += 'sudo python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
