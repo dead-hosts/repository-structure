@@ -478,6 +478,7 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
                     return 'Unkown error. for %s' % (self.command)
 
                 print(decoded)
+                print(Helpers.Command('pwd').execute())
                 print(
                     Helpers.Command(
                         'ls -al %s' %
