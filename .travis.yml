@@ -23,6 +23,7 @@ sudo: required
 before_install:
   - sudo apt-get -y install python3-pip
   - sudo apt-get -y install dos2unix
+  - pip3 install colorama
 
 script:
   # - ls -al /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages
