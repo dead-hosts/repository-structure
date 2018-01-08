@@ -18,7 +18,7 @@ cache:
   - apt
   - pip
 
-sudo: required
+# sudo: required
 
 before_install:
   - sudo apt-get -y install python3-pip
@@ -30,7 +30,7 @@ script:
   - export TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG}
   - export GIT_EMAIL=${GIT_EMAIL}
   - export GIT_NAME=${GIT_NAME}
-  - sudo python3 update_me.py
+  - python3 update_me.py
 
 notifications:
   email: false
