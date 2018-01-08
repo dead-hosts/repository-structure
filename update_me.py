@@ -330,7 +330,7 @@ class Initiate(object):
 
             self.travis_permissions()
 
-            print(Helpers.Command(command_to_execute).execute())
+            print(Helpers.Command(command_to_execute,True).execute())
             Settings.informations['last_test'] = strftime('%s')
             Helpers.Dict(
                 Settings.informations).to_json(
