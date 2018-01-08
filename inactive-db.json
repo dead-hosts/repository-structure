@@ -1,8 +1,7 @@
 {
     "/home/travis/build/dead-hosts/repository-structure/Testing.list": {
         "1515429277": [
-            "gads.pubmatic.com",
-            "www.googletagservices.com"
+            "gads.pubmatic.com"
         ],
         "to_test": []
     }
