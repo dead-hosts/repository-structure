@@ -163,8 +163,8 @@ class Initiate(object):
             'git config --global user.name "%s"' %
             (environ['GIT_NAME']), False).execute()
         Helpers.Command(
-            'git config --global push.default simple').execute()
-        Helpers.Command('git checkout master', True).execute()
+            'git config --global push.default simple',False).execute()
+        Helpers.Command('git checkout master', False).execute()
 
         return
 
@@ -267,7 +267,7 @@ class Initiate(object):
         for command in commands:
             Helpers.Command(command, False).execute()
 
-        if Helpers.Command('git config core.sharedRepository').execute() == '':
+        if Helpers.Command('git config core.sharedRepository',False).execute() == '':
             Helpers.Command(
                 'git config core.sharedRepository group',
                 False).execute()
@@ -492,11 +492,6 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
                     return 'Unkown error. for %s' % (self.command)
 
                 print(decoded)
-                print(Helpers.Command('pwd').execute())
-                print(
-                    Helpers.Command(
-                        'ls -al %s' %
-                        environ['TRAVIS_BUILD_DIR']).execute())
                 exit(1)
             return self.decode_output(output)
 
