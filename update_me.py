@@ -468,7 +468,8 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
                 to_decode: byte(s), Output of a command to decode.
             """
             if to_decode is not None:
-                return to_decode.decode(self.decode_type)
+                # return to_decode.decode(self.decode_type)
+                return str(to_decode,'utf-8')
             return False
 
         def execute(self):
@@ -493,8 +494,7 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
 
                 print(decoded)
                 exit(1)
-            # return self.decode_output(output)
-            return output
+            return self.decode_output(output)
 
     class Regex(object):  # pylint: disable=too-few-public-methods
 
