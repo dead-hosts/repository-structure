@@ -2,7 +2,7 @@
     "autosave_minutes": "10",
     "commit_autosave_message": "Test of the testing system",
     "days_until_next_test": "5",
-    "last_test": "0",
+    "last_test": "1515452366",
     "list_name": "Testing.list",
     "name": "Testing",
     "raw_link": "https://raw.githubusercontent.com/funilrys/dead-hosts/master/SpotifyAds/output/hosts/ACTIVE/hosts",
