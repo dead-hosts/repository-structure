@@ -25,13 +25,13 @@ before_install:
   - sudo apt-get -y install dos2unix
 
 script:
-  - ls -al /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages
+  # - ls -al /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages
   - export TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR}
   - export GH_TOKEN=${GH_TOKEN}
   - export TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG}
   - export GIT_EMAIL=${GIT_EMAIL}
   - export GIT_NAME=${GIT_NAME}
-  - sudo python3 ./update_me.py
+  - python3 ./update_me.py
 
 notifications:
   email: false
