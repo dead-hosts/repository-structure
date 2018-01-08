@@ -141,7 +141,7 @@ class Initiate(object):
     def __init__(self):  # pylint: disable=too-many-branches
         self.travis()
         self.travis_permissions()
-        self.settings()
+        self.stucture()
 
     @classmethod
     def travis(cls):
@@ -163,12 +163,63 @@ class Initiate(object):
             'git config --global user.name "%s"' %
             (environ['GIT_NAME']), False).execute()
         Helpers.Command(
-            'git config --global push.default simple',False).execute()
+            'git config --global push.default simple', False).execute()
         Helpers.Command('git checkout master', False).execute()
 
         return
 
-    def settings(self):
+    @classmethod
+    def set_info_settings(cls, index):
+        """
+        Set Settings.informations according to info.json.
+
+        Arguments:
+            index: A string, a valid index name.
+        """
+
+        try:
+            getattr(Settings, index)
+            if index in [
+                    'stable',
+                    'currently_under_test'] and Settings.informations[index].isdigit():
+                setattr(Settings, index, bool(
+                    int(Settings.informations[index])))
+            elif index in ['days_until_next_test', 'last_test', 'autosave_minutes'] \
+                    and Settings.informations[index].isdigit():
+                setattr(
+                    Settings, index, int(
+                        Settings.informations[index]))
+            else:
+                setattr(
+                    Settings, index, Settings.informations[index])
+        except AttributeError:
+            raise Exception(
+                '"%s" into %s in unknown.' %
+                (index, Settings.repository_info))
+
+    def download_PyFunceble(self):  # pylint: disable=invalid-name
+        """
+        Download PyFunceble files if they are not present.
+        """
+
+        for file in Settings.PyFunceble:
+            file_path = Settings.current_directory + file
+
+            if not path.isfile(file_path) or Settings.stable:
+                download_link = Settings.PyFunceble[file].replace(
+                    'master', 'dev')
+            else:
+                download_link = Settings.PyFunceble[file].replace(
+                    'dev', 'master')
+
+            Helpers.Download(download_link, file_path).link()
+
+            self.travis_permissions()
+
+            stats = stat(file_path)
+            chmod(file_path, stats.st_mode | S_IEXEC)
+
+    def stucture(self):
         """
         Read info.json and retranscript its data into the script.
         """
@@ -182,72 +233,17 @@ class Initiate(object):
                     if index == 'name':
                         continue
 
-                    try:
-                        getattr(Settings, index)
-                        if index in [
-                                'stable',
-                                'currently_under_test'] and Settings.informations[index].isdigit():
-                            setattr(Settings, index, bool(
-                                int(Settings.informations[index])))
-                        elif index in ['days_until_next_test', 'last_test', 'autosave_minutes'] \
-                                and Settings.informations[index].isdigit():
-                            setattr(
-                                Settings, index, int(
-                                    Settings.informations[index]))
-                        else:
-                            setattr(
-                                Settings, index, Settings.informations[index])
-                    except AttributeError:
-                        raise Exception(
-                            '"%s" into %s in unknown.' %
-                            (index, Settings.repository_info))
+                    self.set_info_settings(index)
                 else:
                     raise Exception(
                         'Please complete "%s" into %s' %
                         (index, Settings.repository_info))
 
-            for file in Settings.PyFunceble:
-                file_path = Settings.current_directory + file
-
-                if not path.isfile(file_path) or Settings.stable:
-                    download_link = Settings.PyFunceble[file].replace(
-                        'master', 'dev')
-                else:
-                    download_link = Settings.PyFunceble[file].replace(
-                        'dev', 'master')
-
-                Helpers.Download(download_link, file_path).link()
-
-                self.travis_permissions()
-
-                stats = stat(file_path)
-                chmod(file_path, stats.st_mode | S_IEXEC)
+            self.download_PyFunceble()
 
             Settings.file_to_test += Settings.list_name
 
-            regex_new_test = r'Launch\stest'
-
-            if not path.isfile(
-                    Settings.file_to_test) or Helpers.Regex(
-                        Helpers.Command(
-                            'git log -1',
-                            False).execute(),
-                        Settings.regex_travis,
-                        return_data=False,
-                        escape=True).match() or Helpers.Regex(
-                            Helpers.Command(
-                                'git log -1',
-                                False).execute(),
-                            regex_new_test,
-                            return_data=False,
-                            escape=True).match():
-
-                self.list_file()
-                if path.isdir(Settings.current_directory + 'output'):
-                    Helpers.Command(
-                        Settings.current_directory +
-                        'tool.py -c',
-                        False).execute()
+            self.list_file()
 
     @classmethod
     def travis_permissions(cls):
@@ -267,7 +263,9 @@ class Initiate(object):
         for command in commands:
             Helpers.Command(command, False).execute()
 
-        if Helpers.Command('git config core.sharedRepository',False).execute() == '':
+        if Helpers.Command(
+                'git config core.sharedRepository',
+                False).execute() == '':
             Helpers.Command(
                 'git config core.sharedRepository group',
                 False).execute()
@@ -279,16 +277,42 @@ class Initiate(object):
         Download Settings.raw_link.
         """
 
-        if Helpers.Download(Settings.raw_link, Settings.file_to_test).link():
+        regex_new_test = r'Launch\stest'
+
+        if not path.isfile(
+                Settings.file_to_test) or Helpers.Regex(
+                    Helpers.Command(
+                        'git log -1',
+                        False).execute(),
+                    Settings.regex_travis,
+                    return_data=False,
+                    escape=True).match() or Helpers.Regex(
+                        Helpers.Command(
+                            'git log -1',
+                            False).execute(),
+                        regex_new_test,
+                        return_data=False,
+                        escape=True).match():
+
+            if Helpers.Download(
+                    Settings.raw_link,
+                    Settings.file_to_test).link():
+                Helpers.Command(
+                    'dos2unix ' +
+                    Settings.file_to_test,
+                    False).execute()
+
+                self.travis_permissions()
+            raise Exception(
+                'Unable to download the the file. Please check the link.')
+
+        if path.isdir(Settings.current_directory + 'output'):
             Helpers.Command(
-                'dos2unix ' +
-                Settings.file_to_test,
+                Settings.current_directory +
+                'tool.py -c',
                 False).execute()
 
-            self.travis_permissions()
-            return True
-        raise Exception(
-            'Unable to download the the file. Please check the link.')
+        return True
 
     def PyFunceble(self):  # pylint: disable=invalid-name
         """
@@ -303,7 +327,8 @@ class Initiate(object):
         command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'python3 %s -v && ' % (tool_path)
         command_to_execute += 'export TRAVIS_BUILD_DIR=%s && ' % environ['TRAVIS_BUILD_DIR']
-        command_to_execute += 'python3 %s -q --directory-structure && ' % (tool_path)
+        command_to_execute += 'python3 %s -q --directory-structure && ' % (
+            tool_path)
         command_to_execute += 'sudo python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
             tool_path, Settings.autosave_minutes, Settings.commit_autosave_message, Settings.commit_autosave_message)  # pylint: disable=line-too-long
         command_to_execute += 'python3 %s -v && ' % (PyFunceble_path)
@@ -329,20 +354,18 @@ class Initiate(object):
                     'continue.json') or int(
                         strftime('%s')) >= retest_date:
 
-            self.travis_permissions()
-
-            Helpers.Command(command_to_execute,True).execute()
-            Settings.informations['last_test'] = strftime('%s')
-            Helpers.Dict(
-                Settings.informations).to_json(
-                    Settings.repository_info)
-
             Helpers.Download(
                 Settings.permanent_license_link,
                 Settings.current_directory +
                 'LICENSE').link()
 
+            Settings.informations['last_test'] = strftime('%s')
+            Helpers.Dict(
+                Settings.informations).to_json(
+                    Settings.repository_info)
             self.travis_permissions()
+
+            Helpers.Command(command_to_execute, True).execute()
 
 
 class Helpers(object):  # pylint: disable=too-few-public-methods
@@ -470,7 +493,7 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
             """
             if to_decode is not None:
                 # return to_decode.decode(self.decode_type)
-                return str(to_decode,'utf-8')
+                return str(to_decode, self.decode_type)
             return False
 
         def execute(self):
