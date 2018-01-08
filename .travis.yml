@@ -31,7 +31,7 @@ script:
   - export TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG}
   - export GIT_EMAIL=${GIT_EMAIL}
   - export GIT_NAME=${GIT_NAME}
-  - ./update_me.py
+  - sudo ./update_me.py
 
 notifications:
   email: false
