@@ -493,7 +493,8 @@ class Helpers(object):  # pylint: disable=too-few-public-methods
 
                 print(decoded)
                 exit(1)
-            return self.decode_output(output)
+            # return self.decode_output(output)
+            return output
 
     class Regex(object):  # pylint: disable=too-few-public-methods
 
