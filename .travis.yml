@@ -16,13 +16,14 @@ matrix:
 
 cache:
   - apt
-  - pip
+  - pip3
 
 sudo: required
 
 before_install:
   - sudo apt-get -y install python3-pip
   - sudo apt-get -y install dos2unix
+  - pip3 install -r requirements.txt
 
 script:
   - export TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR}
