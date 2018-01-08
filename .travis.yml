@@ -30,7 +30,6 @@ script:
   - export TRAVIS_REPO_SLUG=${TRAVIS_REPO_SLUG}
   - export GIT_EMAIL=${GIT_EMAIL}
   - export GIT_NAME=${GIT_NAME}
-  - sudo chmod -R 755 /home/travis/virtualenv/python3.6.3/lib/python3.6/site-packages
   - python3 update_me.py
 
 notifications:
