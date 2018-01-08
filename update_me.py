@@ -300,13 +300,13 @@ class Initiate(object):
         PyFunceble_path = Settings.current_directory + \
             'PyFunceble.py'
 
-        command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
-        command_to_execute += 'sudo python3 %s -v && ' % (tool_path)
+        # command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
+        command_to_execute = 'python3 %s -v && ' % (tool_path)
         command_to_execute += 'export TRAVIS_BUILD_DIR=%s && ' % environ['TRAVIS_BUILD_DIR']
-        command_to_execute += 'sudo python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
+        command_to_execute += 'python3 %s --dev --autosave-minutes %s --commit-autosave-message "[Autosave] %s" --commit-results-message "[Results] %s" -i && ' % (  # pylint: disable=line-too-long
             tool_path, Settings.autosave_minutes, Settings.commit_autosave_message, Settings.commit_autosave_message)  # pylint: disable=line-too-long
-        command_to_execute += 'sudo python3 %s -v && ' % (PyFunceble_path)
-        command_to_execute += 'sudo python3 %s --travis -a -ex --plain --split -t 2 -f %s ' % (
+        command_to_execute += 'python3 %s -v && ' % (PyFunceble_path)
+        command_to_execute += 'python3 %s --travis -a -ex --plain --split -t 2 -f %s' % (
             PyFunceble_path, Settings.file_to_test)
 
         if Settings.days_until_next_test >= 1 and Settings.last_test != 0:
