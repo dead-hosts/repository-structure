@@ -303,8 +303,9 @@ class Initiate(object):
                     False).execute()
 
                 self.travis_permissions()
-            raise Exception(
-                'Unable to download the the file. Please check the link.')
+            else:
+                raise Exception(
+                    'Unable to download the the file. Please check the link.')
 
         if path.isdir(Settings.current_directory + 'output'):
             Helpers.Command(
