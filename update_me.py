@@ -26,7 +26,7 @@ from re import escape
 from shutil import copyfileobj
 from stat import S_IEXEC
 from subprocess import PIPE, Popen
-from time import strftime
+from time import ctime, strftime
 
 from requests import get
 
@@ -122,13 +122,13 @@ class Settings(object):  # pylint: disable=too-few-public-methods
 
     # This variable is used to set the default commit message when we commit
     # under Travic CI.
-
+    #
     # Note: DO NOT TOUCH UNLESS YOU KNOW WHAT IT MEANS!
     # Note: This variable is auto updated by Initiate()
     commit_autosave_message = ''
 
     # This variable is used to set permanent_license_link.
-
+    #
     # Note: DO NOT TOUCH UNLESS YOU KNOW WHAT IT MEANS!
     permanent_license_link = 'https://raw.githubusercontent.com/dead-hosts/repository-structure/master/LICENSE'  # pylint: disable=line-too-long
 
@@ -205,14 +205,15 @@ class Initiate(object):
         for file in Settings.PyFunceble:
             file_path = Settings.current_directory + file
 
-            if not path.isfile(file_path) or Settings.stable:
+            if not path.isfile(file_path) or not Settings.stable:
                 download_link = Settings.PyFunceble[file].replace(
                     'master', 'dev')
             else:
-                download_link = Settings.PyFunceble[file].replace(
+                download_link = Settings.PyFunceble[file]. replace(
                     'dev', 'master')
 
-            Helpers.Download(download_link, file_path).link()
+            if not Helpers.Download(download_link, file_path).link():
+                raise Exception('Unable to download %s.' % download_link)
 
             self.travis_permissions()
 
@@ -244,6 +245,10 @@ class Initiate(object):
             Settings.file_to_test += Settings.list_name
 
             self.list_file()
+        else:
+            raise Exception(
+                'Impossible to read %s' %
+                Settings.current_directory + 'info.json')
 
     @classmethod
     def travis_permissions(cls):
@@ -279,20 +284,13 @@ class Initiate(object):
 
         regex_new_test = r'Launch\stest'
 
-        if not path.isfile(
-                Settings.file_to_test) or Helpers.Regex(
-                    Helpers.Command(
-                        'git log -1',
-                        False).execute(),
-                    Settings.regex_travis,
-                    return_data=False,
-                    escape=True).match() or Helpers.Regex(
-                        Helpers.Command(
-                            'git log -1',
-                            False).execute(),
-                        regex_new_test,
-                        return_data=False,
-                        escape=True).match():
+        if not Settings.currently_under_test or Helpers.Regex(
+                Helpers.Command(
+                    'git log -1',
+                    False).execute(),
+                regex_new_test,
+                return_data=False,
+                escape=True).match():
 
             if Helpers.Download(
                     Settings.raw_link,
@@ -307,13 +305,30 @@ class Initiate(object):
                 raise Exception(
                     'Unable to download the the file. Please check the link.')
 
-        if path.isdir(Settings.current_directory + 'output'):
-            Helpers.Command(
-                Settings.current_directory +
-                'tool.py -c',
-                False).execute()
+            if path.isdir(Settings.current_directory + 'output'):
+                Helpers.Command(
+                    Settings.current_directory +
+                    'tool.py -c',
+                    False).execute()
 
-        return True
+            return True
+        return False
+
+    @classmethod
+    def allow_test(cls):
+        """
+        Check if we allow a test.
+        """
+
+        if Settings.days_until_next_test >= 1 and Settings.last_test != 0:
+            retest_date = Settings.last_test + \
+                (24 * Settings.days_until_next_test * 3600)
+
+            if int(strftime('%s')) >= retest_date or Settings.currently_under_test:
+                return True
+            return False
+        else:
+            return True
 
     def PyFunceble(self):  # pylint: disable=invalid-name
         """
@@ -336,24 +351,7 @@ class Initiate(object):
         command_to_execute += 'sudo python3 %s --travis -a -ex --plain --split -t 2 -f %s' % (
             PyFunceble_path, Settings.file_to_test)
 
-        if Settings.days_until_next_test >= 1 and Settings.last_test != 0:
-            retest_date = Settings.last_test + \
-                (24 * Settings.days_until_next_test * 3600)
-        else:
-            retest_date = int(strftime('%s')) - 60
-
-        if not Helpers.Regex(
-                Helpers.Command(
-                    'git log -1',
-                    False).execute(),
-                Settings.regex_travis,
-                return_data=False,
-                escape=True).match() or not path.isfile(
-                    Settings.current_directory +
-                    'output' +
-                    directory_separator +
-                    'continue.json') or int(
-                        strftime('%s')) >= retest_date:
+        if self.allow_test():
 
             Helpers.Download(
                 Settings.permanent_license_link,
@@ -366,7 +364,36 @@ class Initiate(object):
                     Settings.repository_info)
             self.travis_permissions()
 
-            Helpers.Command(command_to_execute, True).execute()
+            print(Helpers.Command(command_to_execute, True).execute())
+
+            commit_message = 'Update of info.json'
+
+            if Helpers.Regex(
+                    Helpers.Command(
+                        'git log -1',
+                        False).execute(),
+                    "[Results]",
+                    return_data=False,
+                    escape=True).match():
+                Settings.informations['currently_under_test'] = str(int(False))
+                commit_message = "[Results] " + commit_message + ' [ci skip]'
+            else:
+                Settings.informations['currently_under_test'] = str(int(True))
+                commit_message = "[Autosave] " + \
+                    commit_message + ' && launch next test part'
+
+            Helpers.Dict(
+                Settings.informations).to_json(
+                    Settings.repository_info)
+            self.travis_permissions()
+
+            Helpers.Command(
+                "git add --all && git commit -a -m '%s' && git push origin master" %
+                commit_message).execute()
+        else:
+            print("No need to test until %s." % ctime(
+                Settings.last_test + (24 * Settings.days_until_next_test * 3600)))
+            exit(0)
 
 
 class Helpers(object):  # pylint: disable=too-few-public-methods
