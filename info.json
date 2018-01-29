@@ -6,7 +6,7 @@
     "last_test": "1516574268",
     "list_name": "Testing.list",
     "name": "Testing",
-    "raw_link": "https://github.com/FadeMind/hosts.extras/blob/master/add.Dead/hosts",
+    "raw_link": "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts",
     "stable": "0",
     "arguments": [
         "--travis",
