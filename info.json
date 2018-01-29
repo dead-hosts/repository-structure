@@ -1,13 +1,4 @@
 {
-    "autosave_minutes": "10",
-    "commit_autosave_message": "Test of the testing system",
-    "currently_under_test": "0",
-    "days_until_next_test": "5",
-    "last_test": "1516574268",
-    "list_name": "Testing.list",
-    "name": "Testing",
-    "raw_link": "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts",
-    "stable": "0",
     "arguments": [
         "--travis",
         "-a",
@@ -15,5 +6,14 @@
         "--plain",
         "--split",
         "-t 2"
-    ]
+    ],
+    "autosave_minutes": "10",
+    "commit_autosave_message": "Test of the testing system",
+    "currently_under_test": "0",
+    "days_until_next_test": "5",
+    "last_test": "1517239762",
+    "list_name": "Testing.list",
+    "name": "Testing",
+    "raw_link": "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts",
+    "stable": "0"
 }
