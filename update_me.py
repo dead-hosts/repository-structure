@@ -135,6 +135,7 @@ class Settings(object):  # pylint: disable=too-few-public-methods
     # This variable is used to set the arguments when executing PyFunceble.py
     arguments = []
 
+
 class Initiate(object):
     """
     Initiate several actions.
@@ -332,7 +333,8 @@ class Initiate(object):
         else:
             return True
 
-    def _construct_arguments(self):
+    @classmethod
+    def _construct_arguments(cls):
         """
         Construct the arguments to pass to PyFunceble.
         """
@@ -340,8 +342,8 @@ class Initiate(object):
         result = ""
 
         if Settings.arguments != []:
-            for argument in arguments:
-                if argument != arguments[-1]:
+            for argument in Settings.arguments:
+                if argument != Settings.arguments[-1]:
                     result += argument + ' '
                 else:
                     result += argument
@@ -360,8 +362,8 @@ class Initiate(object):
 
         if Settings.stable:
             status = ''
-        else
-            status == '--dev'
+        else:
+            status = '--dev'
 
         command_to_execute = 'sudo python3 %s --dev -u && ' % (tool_path)
         command_to_execute += 'python3 %s -v && ' % (tool_path)
