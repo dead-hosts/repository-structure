@@ -6,6 +6,14 @@
     "last_test": "1516574268",
     "list_name": "Testing.list",
     "name": "Testing",
-    "raw_link": "https://raw.githubusercontent.com/funilrys/dead-hosts/master/SpotifyAds/output/hosts/ACTIVE/hosts",
-    "stable": "0"
+    "raw_link": "https://github.com/FadeMind/hosts.extras/blob/master/add.Dead/hosts",
+    "stable": "0",
+    "arguments": [
+        "--travis",
+        "-a",
+        "-ex",
+        "--plain",
+        "--split",
+        "-t 2"
+    ]
 }
