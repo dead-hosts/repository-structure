@@ -449,13 +449,15 @@ class Initiate(object):
         """
 
         if Settings.arguments or Settings.commit_autosave_message:
-            result = ' '.join(Settings.arguments)
-
             if Settings.commit_autosave_message:
-                result += ' --commit-autosave-messsage "[Autosave] %s"' % Settings.commit_autosave_message  # pylint: disable=line-too-long
-                result += ' --commit-results-messsage "[Results] %s"' % Settings.commit_autosave_message  # pylint: disable=line-too-long
+                Settings.arguments.extend(
+                    [
+                        '--commit-autosave-messsage "[Autosave] %s"' %
+                        Settings.commit_autosave_message,
+                        '--commit-autosave-messsage "[Results] %s"' %
+                        Settings.commit_autosave_message])
 
-            return result
+            return ' '.join(Settings.arguments)
         return ""
 
     @classmethod
