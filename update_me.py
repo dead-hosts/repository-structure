@@ -374,6 +374,7 @@ class Initiate(object):
                     'Unable to download the the file. Please check the link.')
 
             if path.isdir(Settings.current_directory + 'output'):
+                Helpers.Command(self.config_update, False).execute()
                 Helpers.Command(
                     Settings.current_directory +
                     'PyFunceble.py --clean',
