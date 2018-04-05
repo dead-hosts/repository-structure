@@ -452,9 +452,9 @@ class Initiate(object):
             if Settings.commit_autosave_message:
                 Settings.arguments.extend(
                     [
-                        '--commit-autosave-messsage "[Autosave] %s"' %
+                        '--commit-autosave-message "[Autosave] %s"' %
                         Settings.commit_autosave_message,
-                        '--commit-autosave-messsage "[Results] %s"' %
+                        '--commit-results-message "[Results] %s"' %
                         Settings.commit_autosave_message])
 
             return ' '.join(Settings.arguments)
