@@ -470,6 +470,21 @@ class Initiate(object):
                 "\n".join(clean_list), overwrite=True
             )
 
+    def _ping_constructor(cls):
+        """
+        Create the list of user to ping.
+        """
+
+        result = []
+        for username in Settings.ping:
+            if username.startswith('@'):
+                result.append(username)
+            else:
+                result.append("%s@" % username)
+
+
+        return ' '.join(result)
+
     def PyFunceble(self):  # pylint: disable=invalid-name
         """
         Install and run PyFunceble.
@@ -498,6 +513,11 @@ class Initiate(object):
                 Helpers.Command(self.config_update, False).execute()
             Helpers.Command(command_to_execute, True).execute()
 
+            if Settings.ping:
+                ping = '&& %s' % self._ping_constructor()
+            else:
+                ping = ''
+
             try:
                 _ = environ["TRAVIS_BUILD_DIR"]
                 commit_message = "Update of info.json"
@@ -509,7 +529,7 @@ class Initiate(object):
                     escape=True,
                 ).match():
                     Settings.informations["currently_under_test"] = str(int(False))
-                    commit_message = "[Results] " + commit_message + " [ci skip]"
+                    commit_message = "[Results] %s %s && Generation of clean.list [ci skip]" % (commit_message, ping)
 
                     self._clean_original()
                 else:
