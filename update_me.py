@@ -459,7 +459,7 @@ class Initiate(object):
 
             return ' '.join(Settings.arguments)
         return ""
-        
+
     @classmethod
     def _clean_original(cls):
         """
@@ -532,36 +532,33 @@ class Initiate(object):
             else:
                 ping = ""
 
-            try:
-                _ = environ["TRAVIS_BUILD_DIR"]
-                commit_message = "Update of info.json"
+            _ = environ["TRAVIS_BUILD_DIR"]
+            commit_message = "Update of info.json"
 
-                if Helpers.Regex(
-                    Helpers.Command("git log -1", False).execute(),
-                    "[Results]",
-                    return_data=False,
-                    escape=True,
-                ).match():
-                    Settings.informations["currently_under_test"] = str(int(False))
-                    commit_message = "[Results] %s %s && Generation of clean.list [ci skip]" % (
-                        commit_message, ping
-                    )
+            if Helpers.Regex(
+                Helpers.Command("git log -1", False).execute(),
+                "[Results]",
+                return_data=False,
+                escape=True,
+            ).match():
+                Settings.informations["currently_under_test"] = str(int(False))
+                commit_message = "[Results] %s %s && Generation of clean.list [ci skip]" % (
+                    commit_message, ping
+                )
 
-                    self._clean_original()
-                else:
-                    Settings.informations["currently_under_test"] = str(int(True))
-                    commit_message = "[Autosave] " + commit_message
+                self._clean_original()
+            else:
+                Settings.informations["currently_under_test"] = str(int(True))
+                commit_message = "[Autosave] " + commit_message
 
-                Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
-                self.travis_permissions()
+            Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
+            self.travis_permissions()
 
-                Helpers.Command(
-                    "git add --all && git commit -a -m '%s' && git push origin master"
-                    % commit_message,
-                    False,
-                ).execute()
-            except KeyError:
-                pass
+            Helpers.Command(
+                "git add --all && git commit -a -m '%s' && git push origin master"
+                % commit_message,
+                False,
+            ).execute()
         else:
             print(
                 "No need to test until %s."
