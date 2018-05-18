@@ -448,11 +448,18 @@ class Initiate(object):
         Construct the arguments to pass to PyFunceble.
         """
 
-        if Settings.arguments != []:
-            return " ".join(Settings.arguments)
+        if Settings.arguments or Settings.commit_autosave_message:
+            if Settings.commit_autosave_message:
+                Settings.arguments.extend(
+                    [
+                        '--commit-autosave-message "[Autosave] %s"' %
+                        Settings.commit_autosave_message,
+                        '--commit-results-message "[Results] %s"' %
+                        Settings.commit_autosave_message])
 
+            return ' '.join(Settings.arguments)
         return ""
-
+        
     @classmethod
     def _clean_original(cls):
         """
