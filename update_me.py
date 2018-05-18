@@ -476,7 +476,7 @@ class Initiate(object):
         """
 
         # pylint: disable=invalid-name
-        PyFunceble_path = Settings.current_directory + "PyFunceble.py"
+        PyFunceble_path = "PyFunceble"
 
         command_to_execute = "export TRAVIS_BUILD_DIR=%s && " % environ[
             "TRAVIS_BUILD_DIR"
