@@ -159,6 +159,13 @@ class Settings(object):  # pylint: disable=too-few-public-methods
     # Note: This variable is auto updated by Initiate()
     custom_pyfunceble_config = False
 
+    # This variable is used to get the list of GitHub username to ping at the
+    # end of a test.
+    #
+    # Note: DO NOT TOUCH UNLESS YOU KNOW WHAT IT MEANS!
+    # Note: This variable is auto updated by Initiate()
+    ping = []
+
 
 class Initiate(object):
     """
@@ -470,6 +477,7 @@ class Initiate(object):
                 "\n".join(clean_list), overwrite=True
             )
 
+    @classmethod
     def _ping_constructor(cls):
         """
         Create the list of user to ping.
@@ -477,13 +485,12 @@ class Initiate(object):
 
         result = []
         for username in Settings.ping:
-            if username.startswith('@'):
+            if username.startswith("@"):
                 result.append(username)
             else:
                 result.append("%s@" % username)
 
-
-        return ' '.join(result)
+        return " ".join(result)
 
     def PyFunceble(self):  # pylint: disable=invalid-name
         """
@@ -514,9 +521,9 @@ class Initiate(object):
             Helpers.Command(command_to_execute, True).execute()
 
             if Settings.ping:
-                ping = '&& %s' % self._ping_constructor()
+                ping = "&& %s" % self._ping_constructor()
             else:
-                ping = ''
+                ping = ""
 
             try:
                 _ = environ["TRAVIS_BUILD_DIR"]
@@ -529,7 +536,9 @@ class Initiate(object):
                     escape=True,
                 ).match():
                     Settings.informations["currently_under_test"] = str(int(False))
-                    commit_message = "[Results] %s %s && Generation of clean.list [ci skip]" % (commit_message, ping)
+                    commit_message = "[Results] %s %s && Generation of clean.list [ci skip]" % (
+                        commit_message, ping
+                    )
 
                     self._clean_original()
                 else:
