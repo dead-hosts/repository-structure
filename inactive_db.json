@@ -88,10 +88,9 @@
             "www.walgreenspharmacyrx.net",
             "www.wikipediastore.ru",
             "www.winmediaplayerplus.com",
-            "www.wwwfacebook.com"
-        ],
-        "to_test": [
+            "www.wwwfacebook.com",
             "adobe-acrobat-reader-upgrade.com"
-        ]
+        ],
+        "to_test": []
     }
 }
