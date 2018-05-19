@@ -532,7 +532,7 @@ class Initiate(object):
             else:
                 ping = ""
 
-            _ = environ["TRAVIS_BUILD_DIR"]s
+            _ = environ["TRAVIS_BUILD_DIR"]
             commit_message = "Update of info.json"
 
             if Helpers.Regex(
