@@ -16,8 +16,7 @@
     "list_name": "Testing.list",
     "name": "Testing",
     "ping": [
-        "funilrys",
-        "heviscope"
+        "funilrys"
     ],
     "raw_link": "https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Dead/hosts",
     "stable": "0"
