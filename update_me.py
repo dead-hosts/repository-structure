@@ -199,7 +199,7 @@ class Initiate(object):
                 'git config --global user.name "%s"' % (environ["GIT_NAME"]), False
             ).execute()
             Helpers.Command("git config --global push.default simple", False).execute()
-            Helpers.Command("git checkout master", False).execute()
+            Helpers.Command("git checkout %s" % environ['GIT_BRANCH'], False).execute()
 
             return
 
@@ -555,8 +555,8 @@ class Initiate(object):
             self.travis_permissions()
 
             Helpers.Command(
-                "git add --all && git commit -a -m '%s' && git push origin master"
-                % commit_message,
+                "git add --all && git commit -a -m '%s' && git push origin %s"
+                % (commit_message, environ['GIT_BRANCH']),
                 True,
             ).execute()
         else:
