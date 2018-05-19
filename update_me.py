@@ -199,7 +199,7 @@ class Initiate(object):
                 'git config --global user.name "%s"' % (environ["GIT_NAME"]), False
             ).execute()
             Helpers.Command("git config --global push.default simple", False).execute()
-            Helpers.Command("git checkout %s" % environ['GIT_BRANCH'], False).execute()
+            Helpers.Command("git checkout %s" % environ["GIT_BRANCH"], False).execute()
 
             return
 
@@ -448,16 +448,9 @@ class Initiate(object):
         Construct the arguments to pass to PyFunceble.
         """
 
-        if Settings.arguments or Settings.commit_autosave_message:
-            if Settings.commit_autosave_message:
-                Settings.arguments.extend(
-                    [
-                        '--commit-autosave-message "[Autosave] %s"' %
-                        Settings.commit_autosave_message,
-                        '--commit-results-message "[Results] %s"' %
-                        Settings.commit_autosave_message])
+        if Settings.arguments:
+            return " ".join(Settings.arguments)
 
-            return ' '.join(Settings.arguments)
         return ""
 
     @classmethod
@@ -510,8 +503,12 @@ class Initiate(object):
         command_to_execute = "export TRAVIS_BUILD_DIR=%s && " % environ[
             "TRAVIS_BUILD_DIR"
         ]
-        command_to_execute += "%s %s -f %s" % (
-            PyFunceble_path, self._construct_arguments(), Settings.file_to_test
+        command_to_execute += "%s %s --commit-autosave-message %s --commit-results-message %s -f %s" % ( # pylint: disable=line-too-long
+            PyFunceble_path,
+            self._construct_arguments(),
+            "[Autosave] %s" % Settings.commit_autosave_message,
+            "[Results] %s" % Settings.commit_autosave_message,
+            Settings.file_to_test,
         )
 
         if self.allow_test():
@@ -556,7 +553,7 @@ class Initiate(object):
 
             Helpers.Command(
                 "git add --all && git commit -a -m '%s' && git push origin %s"
-                % (commit_message, environ['GIT_BRANCH']),
+                % (commit_message, environ["GIT_BRANCH"]),
                 False,
             ).execute()
         else:
