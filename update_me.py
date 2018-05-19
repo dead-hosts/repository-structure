@@ -557,7 +557,7 @@ class Initiate(object):
             Helpers.Command(
                 "git add --all && git commit -a -m '%s' && git push origin %s"
                 % (commit_message, environ['GIT_BRANCH']),
-                True,
+                False,
             ).execute()
         else:
             print(
