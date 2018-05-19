@@ -21,7 +21,7 @@ cache:
 sudo: required
 
 install:
-  - pip3 --install -r requirements.txt
+  - pip3 install -r requirements.txt
   - sudo apt-get -y install dos2unix
   #- pip3 install colorama
 
