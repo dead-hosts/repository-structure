@@ -1,12 +1,11 @@
 {
-    "arguments": [
-    ],
+    "arguments": [],
     "clean_list_file": "clean.list",
     "clean_original": "1",
     "commit_autosave_message": "Test of the testing system",
     "currently_under_test": "0",
     "days_until_next_test": "5",
-    "last_test": "0",
+    "last_test": "1526747464",
     "list_name": "Testing.list",
     "name": "Testing",
     "ping": [
