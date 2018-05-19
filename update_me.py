@@ -532,7 +532,7 @@ class Initiate(object):
             else:
                 ping = ""
 
-            _ = environ["TRAVIS_BUILD_DIR"]
+            _ = environ["TRAVIS_BUILD_DIR"]s
             commit_message = "Update of info.json"
 
             if Helpers.Regex(
@@ -557,7 +557,7 @@ class Initiate(object):
             Helpers.Command(
                 "git add --all && git commit -a -m '%s' && git push origin master"
                 % commit_message,
-                False,
+                True,
             ).execute()
         else:
             print(
