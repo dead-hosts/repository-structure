@@ -495,7 +495,7 @@ class Initiate(object):
             if username.startswith("@"):
                 result.append(username)
             else:
-                result.append("%s@" % username)
+                result.append("@%s" % username)
 
         return " ".join(result)
 
