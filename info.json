@@ -3,6 +3,8 @@
         "--commit-autosave-message \"[Autosave] Test of the testing system\"",
         "--commit-results-message \"[Results] Test of the testing system\"",
         "--commit-autosave-message \"[Autosave] Test of the testing system\"",
+        "--commit-results-message \"[Results] Test of the testing system\"",
+        "--commit-autosave-message \"[Autosave] Test of the testing system\"",
         "--commit-results-message \"[Results] Test of the testing system\""
     ],
     "clean_list_file": "clean.list",
@@ -10,7 +12,7 @@
     "commit_autosave_message": "Test of the testing system",
     "currently_under_test": "0",
     "days_until_next_test": "5",
-    "last_test": "0",
+    "last_test": "1526746290",
     "list_name": "Testing.list",
     "name": "Testing",
     "ping": [
