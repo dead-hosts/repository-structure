@@ -93,7 +93,7 @@
         ]
     },
     "/home/travis/build/dead-hosts/repository-structure/Testing.list": {
-        "1526743793": [
+        "1527205249": [
             "adobe-update.org",
             "adobe-updates.org",
             "at1antis.com",
@@ -181,9 +181,10 @@
             "www.walgreenspharmacyrx.net",
             "www.wikipediastore.ru",
             "www.winmediaplayerplus.com",
-            "www.wwwfacebook.com",
-            "adobe-acrobat-reader-upgrade.com"
+            "www.wwwfacebook.com"
         ],
-        "to_test": []
+        "to_test": [
+            "adobe-acrobat-reader-upgrade.com"
+        ]
     }
 }
