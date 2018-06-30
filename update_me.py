@@ -495,11 +495,12 @@ class Initiate(object):
         command_to_execute = "export TRAVIS_BUILD_DIR=%s && " % environ[
             "TRAVIS_BUILD_DIR"
         ]
-        command_to_execute += "%s %s --commit-autosave-message '%s' --commit-results-message '%s' -f %s" % (  # pylint: disable=line-too-long
+        command_to_execute += "%s %s --commit-autosave-message '%s' --commit-results-message '%s' --travis-branch %s -f %s" % (  # pylint: disable=line-too-long
             PyFunceble_path,
             self._construct_arguments(),
             "[Autosave] %s" % Settings.commit_autosave_message,
             "[Results] %s" % Settings.commit_autosave_message,
+            environ["GIT_BRANCH"],
             Settings.file_to_test,
         )
 
