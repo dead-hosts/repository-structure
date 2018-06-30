@@ -543,11 +543,13 @@ class Initiate(object):
             Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
             self.travis_permissions()
 
-            Helpers.Command(
-                "git add --all && git commit -a -m '%s' && git push origin %s"
-                % (commit_message, environ["GIT_BRANCH"]),
-                False,
-            ).execute()
+            print(
+                Helpers.Command(
+                    "git add --all && git commit -a -m '%s' && git push origin %s"
+                    % (commit_message, environ["GIT_BRANCH"]),
+                    True,
+                ).execute()
+            )
         else:
             print(
                 "No need to test until %s."
