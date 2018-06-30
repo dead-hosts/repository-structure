@@ -21,7 +21,7 @@ cache:
 sudo: required
 
 install:
-  - pip3 install git+https://github.com/funilrys/PyFunceble.git@dev#egg=PyFunceble
+  - pip3 install pyfunceble-dev
   - sudo apt-get -y install dos2unix
 
 script:
