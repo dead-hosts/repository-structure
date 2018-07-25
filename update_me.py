@@ -194,7 +194,6 @@ class Initiate:
 
             to_replace = {
                 r"less:.*": "less: True",
-                r"logs:.*": "logs: True",
                 r"seconds_before_http_timeout:.*": "seconds_before_http_timeout: 6",
                 r"share_logs:.*": "share_logs: True",
                 r"split:.*": "split: True",
@@ -207,10 +206,7 @@ class Initiate:
 
             for regex, replacement in to_replace.items():
                 content = Helpers.Regex(
-                    content,
-                    regex,
-                    replace_with=replacement,
-                    return_data=True,
+                    content, regex, replace_with=replacement, return_data=True
                 ).replace()
 
             Helpers.File(destination).write(content, overwrite=True)
