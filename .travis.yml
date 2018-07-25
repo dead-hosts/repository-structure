@@ -3,7 +3,7 @@ env:
     - secure: WmR5PagaS1ruh54RHyjO4a/9h2qX+eAaTOASxspLqIHe0DAFKaKEhipZ1WdF+kHFY+UopqvneshZrkxEQnK0qUnT52/pJz30AKCUU4pxv5l4SrJqbSjSY7E+6N0fGBTMSl1JmAf9q4PQKej2jyfOdJtBjozzlFiQVClU4flyBjy1MARs1j/B9ONOeqRKJqCwfdYjQJgDOO3ncJV4XDGWvRi/uqjelm35IzHVekYU1H9t0m1FWK+nGomnOQDkj02X2eSmtYZAcBDXWBDPq9fg14HOVsU6YMuuxEMCYlryAZXnaDELXHevJxr51TeShSjAbjAwtRDZz0S6J6juAKRxrAGBxR8LWZx68Bz9TuXsmvc6XPypOYB2gQQqwkrwjLKeSoWVqv1otskdwSKaMUgDQd7aFKb8qitYqdDfmiP2Ws4+THpc3Craff5M7xbOvQIODMd3tMW/D1lCAMSJqqexanivz1hm7m+778/c8Nn3+AyLOKT74ZEfHiIzEla8jY7oOvlncLW5ztPQgN5A0aIQD3+tgpxuyt7LYcC+i5azQRSyjoPZdwo5Jx2uhTuxZBAUDijeI5OxW1fpuUx7jbyjh3//RssLRe4byI3zhQoj6iCkwWtUG4L4X0+NCp1A/ZWLx3m7StY7s6btZrdtvZftyKJQBDbe9Eq6/zE/dDkNUQA=
     - GIT_NAME: Travis CI
     - GIT_EMAIL: dead-hosts@funilrys.com
-    - TRAVIS_REPO_SLUG: dead-hosts/add.2o7Net_git_FadeMind
+    - TRAVIS_REPO_SLUG: dead-hosts/repository-structure
     - GIT_BRANCH: master
 
 language: python
