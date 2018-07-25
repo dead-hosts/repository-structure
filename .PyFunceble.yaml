@@ -29,15 +29,15 @@ inactive_database:            True
 # This will dave the database.
 inactive_db:                  {}
 # Activate/Deactivate the output of every informations.
-less:                         False
+less: True # Programmatically updated
 # Activate/Deactivate the output of logs.
-logs:                         True
+logs: True # Programmatically updated
 # Deactivate the generation of files.
 no_files:                     False
 # Activate/Deactivate the usage of WHOIS records for our tests results.
 no_whois:                     False
 # Activate/Deactivate the generation of plain list of domains.
-plain_list_domain:            True
+plain_list_domain:            False
 # Activate/Deactivate the quiet mode.
 quiet:                        False
 # The following will save the referer.
@@ -45,30 +45,30 @@ referer:                      ""
 # HTTP Status code timeout.
 # Consider this as the minimum time in seconds that we need before closing our
 # request.
-seconds_before_http_timeout:  3
+seconds_before_http_timeout: 6 # Programmatically updated
 # Activate/Deactivate the logs sharing.
 # This allow you to share logs which are used to write PyFunceble updates.
-share_logs:                   True
+share_logs: True # Programmatically updated
 # Show/hide execution time.
-show_execution_time:          True
+show_execution_time:          False
 # Show/hide the percentage.
 show_percentage:              True
 # Activate/Deactivate the simple output mode.
 # In this mode we only return the status of the tested domain.
 simple:                       False
 # Activate/Deactivate the split of results fils.
-split:                        True
+split: True # Programmatically updated
 # Activation/Deactivation of Travis CI autosave system.
-travis:                       True
+travis: True # Programmatically updated
 # Default commit message we use for the commit at the end of
 # the the travis_autosave_minutes if we did not read the file completly.
 travis_autosave_commit:       "PyFunceble - AutoSave"
 # Default final commit message we append at the end the last commit.
 travis_autosave_final_commit: "PyFunceble - Results"
 # Minimum of minutes before we start commiting to upstream under Travis CI.
-travis_autosave_minutes:      10
+travis_autosave_minutes: 10 # Programmatically updated
 # This tell us in which branch we have to push
-travis_branch:                master
+travis_branch: master # Programmatically updated
 # Activate/Deactivate the generation of unified files for the results logs.
 unified:                      False
 
@@ -113,7 +113,7 @@ outputs:
       up:                     active_and_merged_in_results
 
   # This section is related to all logs we generate.
-  logs:
+  logs: True # Programmatically updated
     directories:
       date_format:            date_format/
       no_referer:             no_referer/
@@ -222,7 +222,7 @@ http_codes:
 links:
   api_date_format:            "http://pyfunceble.funilrys.com/api/date-format"
   api_no_referer:             "http://pyfunceble.funilrys.com/api/no-referer"
-  config:                     "https://raw.githubusercontent.com/funilrys/PyFunceble/master/config_production.yaml"
+  config:                     "https://raw.githubusercontent.com/funilrys/PyFunceble/master/.PyFunceble_production.yaml"
   dir_structure:              "https://raw.githubusercontent.com/funilrys/PyFunceble/master/dir_structure_production.json"
   iana:                       "https://raw.githubusercontent.com/funilrys/PyFunceble/master/iana-domains-db.json"
   repo:                       "https://github.com/funilrys/PyFunceble"

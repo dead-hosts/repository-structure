@@ -209,7 +209,7 @@ class Initiate:
                 content = Helpers.Regex(
                     content,
                     regex,
-                    replace_with=replacement + " # Programmatically updated",
+                    replace_with=replacement,
                     return_data=True,
                 ).replace()
 
