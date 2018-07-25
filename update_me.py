@@ -105,7 +105,7 @@ class Settings:  # pylint: disable=too-few-public-methods
     #
     # Note: DO NOT TOUCH UNLESS YOU KNOW WHAT IT MEANS!
     PyFunceble = {
-        ".PyFunceble_production.yaml": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/.PyFunceble_production.yaml"  # pylint: disable=line-too-long
+        ".PyFunceble_production.yaml": "https://raw.githubusercontent.com/funilrys/PyFunceble/dev/.PyFunceble_production.yaml"  # pylint: disable=line-too-long
     }
 
     # This variable is used to match [ci skip] from the git log.
