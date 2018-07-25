@@ -31,7 +31,7 @@ inactive_db:                  {}
 # Activate/Deactivate the output of every informations.
 less: True
 # Activate/Deactivate the output of logs.
-logs: True
+logs:                         True
 # Deactivate the generation of files.
 no_files:                     False
 # Activate/Deactivate the usage of WHOIS records for our tests results.
@@ -113,7 +113,7 @@ outputs:
       up:                     active_and_merged_in_results
 
   # This section is related to all logs we generate.
-  logs: True
+  logs:
     directories:
       date_format:            date_format/
       no_referer:             no_referer/
