@@ -186,7 +186,15 @@ class Initiate:
         This method will fix the cross repositories configuration.
         """
 
-        to_download = Settings.PyFunceble[".PyFunceble_production.yaml"]
+        if not Settings.stable:
+            to_download = Settings.PyFunceble[".PyFunceble_production.yaml"].replace(
+                "master", "dev"
+            )
+        else:
+            to_download = Settings.PyFunceble[".PyFunceble_production.yaml"].replace(
+                "dev", "master"
+            )
+
         destination = Settings.permanent_config_link.split("/")[-1]
 
         if path.isfile(destination):
