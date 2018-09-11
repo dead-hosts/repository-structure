@@ -417,7 +417,10 @@ class Initiate:
                 )
 
             if path.isdir(Settings.current_directory + "output"):
-                Helpers.Command("PyFunceble --clean", False).execute()
+                try:
+                    Helpers.Command("PyFunceble --clean", False).execute()
+                except KeyError:
+                    pass
 
             self.travis_permissions()
 
@@ -579,7 +582,7 @@ class Initiate:
 
             try:
                 Helpers.Command(command_to_execute, True).execute()
-            except:
+            except KeyError:
                 pass
 
             if Settings.ping:
