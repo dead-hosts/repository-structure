@@ -219,6 +219,7 @@ class Initiate:
                 ).replace()
 
             Helpers.File(destination).write(content, overwrite=True)
+            Helpers.File(".PyFunceble.yaml").write(content, overwrite=True)
 
     @classmethod
     def travis(cls):
