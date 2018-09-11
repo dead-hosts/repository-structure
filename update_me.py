@@ -577,7 +577,10 @@ class Initiate:
 
             Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
 
-            Helpers.Command(command_to_execute, True).execute()
+            try:
+                Helpers.Command(command_to_execute, True).execute()
+            except:
+                pass
 
             if Settings.ping:
                 ping = "&& %s" % self._ping_constructor()
