@@ -52,7 +52,7 @@ This status is returned when **one of the following cases** is met:
 
 - `Lookup().nslookup()` don't return `server can't find domain-name.me: NXDOMAIN`.
 
-- `HTTOCode().get()` return one the following code `[100, 101, 200, 201, 202, 203, 204, 205, 206]`.
+- `HTTPCode().get()` return one the following code `[100, 101, 200, 201, 202, 203, 204, 205, 206]`.
 
 ### INACTIVE
 
