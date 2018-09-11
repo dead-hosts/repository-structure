@@ -176,7 +176,9 @@ class Initiate:
 
         self._fix_cross_repo_config()
 
-        if not Settings.custom_pyfunceble_config:
+        if not Settings.custom_pyfunceble_config and not path.isfile(
+            Settings.permanent_config_link.split("/")[-1]
+        ):
             Helpers.Download(Settings.permanent_config_link, ".PyFunceble.yaml").link()
         self.stucture()
 
