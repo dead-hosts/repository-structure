@@ -93,7 +93,8 @@
         ]
     },
     "/home/travis/build/dead-hosts/repository-structure/Testing.list": {
-        "1533320404": [
+        "1536700712": [
+            "1-1-1-.ib.adnxs.com",
             "247?realmedia.com",
             "adblade.com,popup",
             "adobe-acrobat-reader-upgrade.com",
@@ -115,26 +116,27 @@
             "flvplayer-setup.com",
             "free‐celebrity‐tube.com",
             "ftpadobe.info",
-            "google-tour.com",
             "googleapps-espana.com",
             "googleapps-jobs.com",
             "googleapps-spain.com",
             "googlechrome2013.com",
+            "google-tour.com",
             "goreanharbourreysa-.4ya.nl",
             "hans.pr0gramm.com",
+            "host.d-ns.ga",
             "housecallsantivirus.com",
             "hurensohn.pr0gramm.com",
             "i-52b.-xxx.ut.bench.utorrent.com",
             "javakiba.org*",
             "keno-chance-game.com",
             "linkrdin.ru",
-            "m.pr0gramm.com",
             "mailto:info@mypornbible.com",
             "malwaredomainlists.com",
             "mangas-porno-.has.it",
             "medspfizer3.com",
             "microsoftmediaplayer.net",
             "moherland.pl,",
+            "m.pr0gramm.com",
             "nacha-onlinereports.com",
             "naughtywifepal.ru",
             "ncaafacebook.com",
@@ -147,12 +149,12 @@
             "paris-.blogspot.ca",
             "paris-.blogspot.ch",
             "paris-.blogspot.co.id",
-            "paris-.blogspot.co.uk",
             "paris-.blogspot.com",
             "paris-.blogspot.com.ar",
             "paris-.blogspot.com.br",
             "paris-.blogspot.com.es",
             "paris-.blogspot.com.tr",
+            "paris-.blogspot.co.uk",
             "paris-.blogspot.de",
             "paris-.blogspot.gr",
             "paris-.blogspot.it",
@@ -191,11 +193,11 @@
             "www.flvplayer-setup.com",
             "www.free‐celebrity‐tube.com",
             "www.ftpadobe.info",
-            "www.google-tour.com",
             "www.googleapps-espana.com",
             "www.googleapps-jobs.com",
             "www.googleapps-spain.com",
             "www.googlechrome2013.com",
+            "www.google-tour.com",
             "www.gooqleapi.com",
             "www.housecallsantivirus.com",
             "www.just-anchor.com?",
@@ -219,8 +221,8 @@
             "www.skype-pro-upgrade.com",
             "www.ssl-visa.net",
             "www.sunonsunday.co.uk",
-            "www.thesunonsunday.co.uk",
             "www.thesunonsunday.com",
+            "www.thesunonsunday.co.uk",
             "www.verisigntrustedservice.com",
             "www.vlcplayer-downloads.info",
             "www.walgreenspharmacyrx.net",
@@ -229,8 +231,6 @@
             "www.wwwfacebook.com",
             "xmr.-eu1.nanopool.org"
         ],
-        "to_test": [
-            "1-1-1-.ib.adnxs.com"
-        ]
+        "to_test": []
     }
 }
