@@ -93,7 +93,7 @@
         ]
     },
     "/home/travis/build/dead-hosts/repository-structure/Testing.list": {
-        "1538268885": [
+        "1538386646": [
             "1-1-1-.ib.adnxs.com",
             "247?realmedia.com",
             "adblade.com,popup",
@@ -114,6 +114,7 @@
             "flashplayerindir.net",
             "flashupdate.de",
             "flvplayer-setup.com",
+            "free‐celebrity‐tube.com",
             "ftpadobe.info",
             "googleapps-espana.com",
             "googleapps-jobs.com",
@@ -163,6 +164,7 @@
             "paris-.blogspot.sk",
             "paypal-servcies.com",
             "preview-.stripchat.com",
+            "public‐sluts.net",
             "px.moatads.com,z.moatads.com",
             "sexchat-.startspin.nl",
             "skype-pro-upgrade.com",
@@ -189,6 +191,7 @@
             "www.flashplayerindir.net",
             "www.flashupdate.de",
             "www.flvplayer-setup.com",
+            "www.free‐celebrity‐tube.com",
             "www.ftpadobe.info",
             "www.googleapps-espana.com",
             "www.googleapps-jobs.com",
@@ -214,6 +217,7 @@
             "www.open-office-software.com",
             "www.paypai.org",
             "www.paypal-servcies.com",
+            "www.public‐sluts.net",
             "www.skype-pro-upgrade.com",
             "www.ssl-visa.net",
             "www.sunonsunday.co.uk",
@@ -231,11 +235,6 @@
             "xn--freecelebritytube-tz2jja.com",
             "xn--publicsluts-qf3f.net"
         ],
-        "to_test": [
-            "free‐celebrity‐tube.com",
-            "public‐sluts.net",
-            "www.free‐celebrity‐tube.com",
-            "www.public‐sluts.net"
-        ]
+        "to_test": []
     }
 }
