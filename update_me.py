@@ -855,7 +855,7 @@ class Helpers:  # pylint: disable=too-few-public-methods
             process = Popen(self.command, stdout=PIPE, shell=True)
 
             while True:
-                current_line = process.stdout.readline().strip().rstrip()
+                current_line = process.stdout.readline().rstrip()
 
                 if not current_line:
                     break
