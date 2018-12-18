@@ -37,8 +37,7 @@ def update_adminisation_file_end():
     Update what should be updated.
     """
 
-    INFO.update({"currently_under_test": str(
-        int(False)), "last_test": strftime("%s")})
+    INFO.update({"currently_under_test": str(int(False)), "last_test": strftime("%s")})
 
 
 def save_administration_file():
@@ -61,8 +60,7 @@ def generate_clean_list():
 
         if path.isfile(active):
             clean_list.extend(
-                Helpers.Regex(Helpers.File(active).to_list(),
-                              r"^#").not_matching_list()
+                Helpers.Regex(Helpers.File(active).to_list(), r"^#").not_matching_list()
             )
 
         clean_list = Helpers.List(clean_list).format()
