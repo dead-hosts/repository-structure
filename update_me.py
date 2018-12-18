@@ -560,6 +560,7 @@ class Initiate:
             command_to_execute = (
                 "export TRAVIS_BUILD_DIR=%s && " % environ["TRAVIS_BUILD_DIR"]
             )
+            command_to_execute += "%s --version && " % PyFunceble_path
 
             usernames = self.github_username_constructor()
 
