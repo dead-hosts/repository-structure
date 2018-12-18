@@ -25,11 +25,12 @@ addons:
       - dos2unix
 
 install:
-  - pip3 install pyfunceble-dev
+  - pip3 install --upgrade pip
+  - pip3 install requests
 
 script:
   - python3 ./update_me.py
 
 notifications:
-  on_success:   change
-  on_failure:   always
+  on_success: change
+  on_failure: always
