@@ -208,8 +208,6 @@ class Initiate:
             Helpers.Download(to_download, destination).link()
 
             to_replace = {
-                r"command_before_end:.*": 'command_before_end: "%s"'
-                % Settings.administration_script,
                 r"less:.*": "less: True",
                 r"plain_list_domain:.*": "plain_list_domain: True",
                 r"seconds_before_http_timeout:.*": "seconds_before_http_timeout: 6",
@@ -521,10 +519,17 @@ class Initiate:
         Construct the arguments to pass to PyFunceble.
         """
 
-        if Settings.arguments:
-            return " ".join(Settings.arguments)
+        result = []
 
-        return ""
+        result.append(
+            "--cmd-before-end %s" % Settings.current_directory
+            + Settings.administration_script
+        )
+
+        if Settings.arguments:
+            result.extend(Settings.arguments)
+
+        return " ".join(result)
 
     @classmethod
     def github_username_constructor(cls):
@@ -946,5 +951,6 @@ class Helpers:  # pylint: disable=too-few-public-methods
 
             return self.data
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     Initiate().PyFunceble()
