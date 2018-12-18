@@ -167,7 +167,7 @@ class Settings:  # pylint: disable=too-few-public-methods
     # This variable set the name of the administration file.
     #
     # Note: DO NOT TOUCH UNLESS YOU KNOW WHAT IT MEANS!
-    administration_script = "administration.py"
+    administration_script = "admin.py"
 
 
 class Initiate:
