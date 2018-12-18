@@ -444,6 +444,11 @@ class Initiate:
                     Helpers.Command("PyFunceble --clean", False).execute()
                 except KeyError:
                     pass
+            else:
+                try:
+                    Helpers.Command("PyFunceble --directory-structure", False).execute()
+                except KeyError:
+                    pass
 
             self.travis_permissions()
 
