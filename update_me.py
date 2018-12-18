@@ -209,7 +209,7 @@ class Initiate:
 
             to_replace = {
                 r"command_before_end:.*": 'command_before_end: "%s"'
-                % (Settings.current_directory + Settings.administration_script),
+                % Settings.administration_script,
                 r"less:.*": "less: True",
                 r"plain_list_domain:.*": "plain_list_domain: True",
                 r"seconds_before_http_timeout:.*": "seconds_before_http_timeout: 6",
@@ -946,5 +946,5 @@ class Helpers:  # pylint: disable=too-few-public-methods
 
             return self.data
 
-
-Initiate().PyFunceble()
+if __name__ == '__main__':
+    Initiate().PyFunceble()
