@@ -164,6 +164,11 @@ class Settings:  # pylint: disable=too-few-public-methods
     # Note: This variable is auto updated by Initiate()
     ping = []
 
+    # This variable set the name of the administration file.
+    #
+    # Note: DO NOT TOUCH UNLESS YOU KNOW WHAT IT MEANS!
+    administration_script = "administration.py"
+
 
 class Initiate:
     """
@@ -203,14 +208,16 @@ class Initiate:
             Helpers.Download(to_download, destination).link()
 
             to_replace = {
+                r"command_before_end:.*": 'command_before_end: "%s"'
+                % (Settings.current_directory + Settings.administration_script),
                 r"less:.*": "less: True",
                 r"plain_list_domain:.*": "plain_list_domain: True",
                 r"seconds_before_http_timeout:.*": "seconds_before_http_timeout: 6",
                 r"share_logs:.*": "share_logs: True",
                 r"split:.*": "split: True",
-                r"travis:.*": "travis: True",
-                r"travis_branch:.*": "travis_branch: master",
                 r"travis_autosave_minutes:.*": "travis_autosave_minutes: 10",
+                r"travis_branch:.*": "travis_branch: master",
+                r"travis:.*": "travis: True",
             }
 
             content = Helpers.File(destination).read()
@@ -316,6 +323,20 @@ class Initiate:
                 '"%s" into %s in unknown.' % (index, Settings.repository_info)
             )
 
+    @classmethod
+    def install_right_pyfunceble(cls):
+        """
+        This method will install the right version of PyFunceble
+        depending of the status of the `stable` index.
+        """
+
+        if Settings.stable:
+            to_download = "PyFunceble"
+        else:
+            to_download = "PyFunceble-dev"
+
+        Helpers.Command("pip3 install %s" % to_download, False).execute()
+
     def download_PyFunceble(self):  # pylint: disable=invalid-name
         """
         Download PyFunceble files if they are not present.
@@ -336,6 +357,8 @@ class Initiate:
 
             Helpers.File(Settings.current_directory + "PyFunceble.py").delete()
             Helpers.File(Settings.current_directory + "tool.py").delete()
+
+        self.install_right_pyfunceble()
 
     @classmethod
     def _format_domain(cls, extracted_domain):
@@ -421,7 +444,7 @@ class Initiate:
             if path.isdir(Settings.current_directory + "output"):
                 try:
                     Helpers.Command("PyFunceble --clean", False).execute()
-                except:
+                except KeyError:
                     pass
 
             self.travis_permissions()
@@ -504,41 +527,19 @@ class Initiate:
         return ""
 
     @classmethod
-    def _clean_original(cls):
-        """
-        Create a clean file file based on our results..
-        """
-
-        if Settings.clean_original:
-            active = Settings.current_directory + "output/domains/ACTIVE/list"
-
-            clean_list = []
-
-            if path.isfile(active):
-                clean_list.extend(
-                    Helpers.Regex(
-                        Helpers.File(active).to_list(), r"^#"
-                    ).not_matching_list()
-                )
-
-            clean_list = Helpers.List(clean_list).format()
-
-            Helpers.File(Settings.clean_list_file).write(
-                "\n".join(clean_list), overwrite=True
-            )
-
-    @classmethod
-    def _ping_constructor(cls):
+    def github_username_constructor(cls):
         """
         Create the list of user to ping.
         """
 
         result = []
-        for username in Settings.ping:
-            if username.startswith("@"):
-                result.append(username)
-            else:
-                result.append("@%s" % username)
+
+        if Settings.ping:
+            for username in Settings.ping:
+                if username.startswith("@"):
+                    result.append(username)
+                else:
+                    result.append("@%s" % username)
 
         return " ".join(result)
 
@@ -555,13 +556,21 @@ class Initiate:
                 "export TRAVIS_BUILD_DIR=%s && " % environ["TRAVIS_BUILD_DIR"]
             )
 
+            usernames = self.github_username_constructor()
+
+            if usernames:
+                ping_message = " // cc %s" % usernames
+            else:
+                ping_message = ""
+
             command_to_execute += (
-                "%s %s --commit-autosave-message '%s' --commit-results-message '%s' --travis-branch %s -f %s"  # pylint: disable=line-too-long
+                "%s %s --commit-autosave-message '%s' --commit-results-message '%s' --travis-branch '%s' -f '%s'"  # pylint: disable=line-too-long
                 % (
                     PyFunceble_path,
                     self._construct_arguments(),
                     "[Autosave] %s" % Settings.commit_autosave_message,
-                    "[Results] %s" % Settings.commit_autosave_message,
+                    "[Results] %s %s"
+                    % (Settings.commit_autosave_message, ping_message),
                     environ["GIT_BRANCH"],
                     Settings.file_to_test,
                 )
@@ -578,49 +587,14 @@ class Initiate:
                 Settings.permanent_license_link, Settings.current_directory + "LICENSE"
             ).link()
 
+            Settings.informations["currently_under_test"] = str(int(True))
             Settings.informations["last_test"] = strftime("%s")
 
             Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
+            self.travis_permissions()
 
             try:
-                Helpers.Command(command_to_execute, True).execute_real_time()
-            except:
-                pass
-
-            if Settings.ping:
-                ping = "&& %s" % self._ping_constructor()
-            else:
-                ping = ""
-
-            try:
-                _ = environ["TRAVIS_BUILD_DIR"]
-                commit_message = "Update of info.json"
-
-                if Helpers.Regex(
-                    Helpers.Command("git log -1", False).execute(),
-                    "[Results]",
-                    return_data=False,
-                    escape=True,
-                ).match():
-                    Settings.informations["currently_under_test"] = str(int(False))
-                    commit_message = (
-                        "[Results] %s %s && Generation of clean.list [ci skip]"
-                        % (commit_message, ping)
-                    )
-
-                    self._clean_original()
-                else:
-                    Settings.informations["currently_under_test"] = str(int(True))
-                    commit_message = "[Autosave] " + commit_message
-
-                Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
-                self.travis_permissions()
-
-                Helpers.Command(
-                    "git add --all && git commit -a -m '%s' && git push origin %s"
-                    % (commit_message, environ["GIT_BRANCH"]),
-                    False,
-                ).execute()
+                Helpers.Command(command_to_execute, True).execute()
             except KeyError:
                 pass
         else:
@@ -812,7 +786,7 @@ class Helpers:  # pylint: disable=too-few-public-methods
             self.command = command
             self.stdout = allow_stdout
 
-        def _decode_output(self, to_decode):
+        def decode_output(self, to_decode):
             """Decode the output of a shell command in order to be readable.
 
             Arguments:
@@ -834,7 +808,7 @@ class Helpers:  # pylint: disable=too-few-public-methods
             (output, error) = process.communicate()
 
             if process.returncode != 0:
-                decoded = self._decode_output(error)
+                decoded = self.decode_output(error)
 
                 if not decoded:
                     return "Unkown error. for %s" % (self.command)
@@ -845,30 +819,7 @@ class Helpers:  # pylint: disable=too-few-public-methods
                 else:
                     return decoded
 
-            return self._decode_output(output)
-
-        def _get_real_time_lines(self):
-            """
-            Return the currently returned line (from the given command).
-            """
-
-            process = Popen(self.command, stdout=PIPE, shell=True)
-
-            while True:
-                current_line = process.stdout.readline().rstrip()
-
-                if not current_line:
-                    break
-                yield current_line.decode(self.decode_type)
-
-        def execute_real_time(self):
-            """
-            Execute the given command and return the output in real time
-            in our current stdout.
-            """
-
-            for line in self._get_real_time_lines():
-                print(line)
+            return self.decode_output(output)
 
     class Regex:  # pylint: disable=too-few-public-methods
 
