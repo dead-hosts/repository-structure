@@ -214,7 +214,7 @@ class Initiate:
                 r"share_logs:.*": "share_logs: True",
                 r"split:.*": "split: True",
                 r"travis_autosave_minutes:.*": "travis_autosave_minutes: 10",
-                r"travis_branch:.*": "travis_branch: master",
+                r"travis_branch:.*": "travis_branch: %s" % environ["GIT_BRANCH"],
                 r"travis:.*": "travis: True",
             }
 
@@ -600,7 +600,7 @@ class Initiate:
 
             Settings.informations["currently_under_test"] = str(int(True))
             Settings.informations["last_test"] = strftime("%s")
-            Settings.informations['days_until_next_test'] = str(0)
+            Settings.informations["days_until_next_test"] = str(0)
 
             Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
             self.travis_permissions()
