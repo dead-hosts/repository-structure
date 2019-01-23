@@ -600,6 +600,7 @@ class Initiate:
 
             Settings.informations["currently_under_test"] = str(int(True))
             Settings.informations["last_test"] = strftime("%s")
+            Settings.informations['days_until_next_test'] = str(0)
 
             Helpers.Dict(Settings.informations).to_json(Settings.repository_info)
             self.travis_permissions()
