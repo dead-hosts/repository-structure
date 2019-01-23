@@ -3,8 +3,8 @@ env:
     - secure: RXKif0xnLfWRnQEw4ctGE+y/4b9Q2KiDj0gejDk7HGKN8aYmpWD1v8E86oAQuzuexqyfHHMghrr28gzUuypjpAUMKdmXAIiyNCVBETkA9BZfCh3WTzm476KPgVHqhh8jmQl8PfNk6NE2wIdRicbN311A5FfPtWq1vhNBZAuKZtAGLUua1PrbGbRLE+uEegaMJJK8wLaXbqUh1myOl/3dO3QlGLsvwHQLUFhj21D5qXCqTuYH/82W2qXTFygvqxkWL8iRoi5Dw5ZU1Xsfn4V86C8ZmeTFVAbJLXQjEnlv6sBEbq3YlwHbRuynMMS9vpBzOwBmYhjf6MERafIGrk9JWfyH1wb0jsUqiDmBSJGgHJTGfAceW4VGy348OpohJGrkcOSuUepTNf+MVEkBw5+H2rg1J9ELJDFEqgR6LNC+VnFjrdFBoz8ig48P1HNKuiwdduB+Dv6xMiawJio9k2Ag4Uj17GKW+QWtJjyvZbWhqppIrFpSxlL6zzAUB8iM2PZV3JTZJjxU3ujhKiPL8vrFTm6pwosVGcpXAOQUdbo0aMjm3N92kG/d32Px6wmPjoXGjUBqk72rXYqCWyXYH6nWo9kH5ktX/G6xGwQaUCRf+9fLvEjOTG8WQn/p/HkEKnN9Sh+P7mFMArl2Hl4Mz99Uhl8bPuT/xs459/rOzVlUcFI=
     - GIT_NAME: Travis CI
     - GIT_EMAIL: dead-hosts@funilrys.com
-    - TRAVIS_REPO_SLUG: dead-hosts/add.2o7Net_git_FadeMind
-    - GIT_BRANCH: master
+    - TRAVIS_REPO_SLUG: dead-hosts/repository-structure
+    - GIT_BRANCH: dev
     - UPDATE_ME_LOCATION: https://raw.githubusercontent.com/dead-hosts/repository-structure/master/update_me.py
     - ADMIN_LOCATION: https://raw.githubusercontent.com/dead-hosts/repository-structure/master/admin.py
 
