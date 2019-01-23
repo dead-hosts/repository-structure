@@ -214,7 +214,7 @@ class Initiate:
                 r"share_logs:.*": "share_logs: True",
                 r"split:.*": "split: True",
                 r"travis_autosave_minutes:.*": "travis_autosave_minutes: 10",
-                r"travis_branch:.*": "travis_branch: %s" % environ["GIT_BRANCH"],
+                r"travis_branch:.*": "travis_branch: master",
                 r"travis:.*": "travis: True",
             }
 
