@@ -11,6 +11,6 @@
     "ping": [
         "funilrys"
     ],
-    "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/.travis/list_to_test",
+    "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/.travis/list/simple",
     "stable": "0"
 }
