@@ -1,10 +1,10 @@
 env:
   global:
-    - secure: RXKif0xnLfWRnQEw4ctGE+y/4b9Q2KiDj0gejDk7HGKN8aYmpWD1v8E86oAQuzuexqyfHHMghrr28gzUuypjpAUMKdmXAIiyNCVBETkA9BZfCh3WTzm476KPgVHqhh8jmQl8PfNk6NE2wIdRicbN311A5FfPtWq1vhNBZAuKZtAGLUua1PrbGbRLE+uEegaMJJK8wLaXbqUh1myOl/3dO3QlGLsvwHQLUFhj21D5qXCqTuYH/82W2qXTFygvqxkWL8iRoi5Dw5ZU1Xsfn4V86C8ZmeTFVAbJLXQjEnlv6sBEbq3YlwHbRuynMMS9vpBzOwBmYhjf6MERafIGrk9JWfyH1wb0jsUqiDmBSJGgHJTGfAceW4VGy348OpohJGrkcOSuUepTNf+MVEkBw5+H2rg1J9ELJDFEqgR6LNC+VnFjrdFBoz8ig48P1HNKuiwdduB+Dv6xMiawJio9k2Ag4Uj17GKW+QWtJjyvZbWhqppIrFpSxlL6zzAUB8iM2PZV3JTZJjxU3ujhKiPL8vrFTm6pwosVGcpXAOQUdbo0aMjm3N92kG/d32Px6wmPjoXGjUBqk72rXYqCWyXYH6nWo9kH5ktX/G6xGwQaUCRf+9fLvEjOTG8WQn/p/HkEKnN9Sh+P7mFMArl2Hl4Mz99Uhl8bPuT/xs459/rOzVlUcFI=
+    - secure: U4VRmhk9XIMHWguG1b8C3ryNSZBBALf5SmAMxdx854DC1YvpGTBes0vlvJI/NDmdGXlgms0lvPf4kC/Xeu8wMh6QqSUIwjZbzo0g01iQ1vUox/IEWpagQzjbJg8IokqldJFJxL4xXf0VGxLs5yriJocnzkv+BHz9a3SRFZEVo187gBeNENza612l95D3Zkfkd5tEygHiTSDL8kyc2s5rJp2esQQjCZCbzCTdRNS98KSEQ+oiRaICt7SXSV2Z/V6lEewhOnTLlIHBTQYnoffNqX6bXWSnJSJyQTjtuvgnTA6CPZO6WbIpZvmXw2Crq8jTHzIfBAPfgExqTOiV9eMIU9V46fBOLh7NdhAM/zsLcmJiFvWvn5Vt+KyGn4XoItdwbQkNa4zV7nXzjKBbdjsR3v1bMAlQlHIy7ppcq2XV+Ub+TOmuDiIo2M07tg4DxPXOapzjIpASIupqFAjQ2uF8n0nZEG2W2n1gdKDT/PnuvmXtOlz97I9wLdLofbRSZ5eWoQ/xDdLZ5GxO+Rm2x0e+MN60pVUQ86ZOgYJwaF5CG3Ew5ukCn4BO84UIxNzDd7Vu35WbVP7pFdEw2cYWzdU8AxKcbnVgzMOmfZWRAE5BgVCI89xXuqZGffetHYvFRkoQ9Z+BQu4PI0If9V665TiEaplH4FNs57uiNLzkXAh3QH8=
     - GIT_NAME: Travis CI
     - GIT_EMAIL: dead-hosts@funilrys.com
-    - TRAVIS_REPO_SLUG: dead-hosts/repository-structure
-    - GIT_BRANCH: dev
+    - TRAVIS_REPO_SLUG: dead-hosts/add.2o7Net_git_FadeMind
+    - GIT_BRANCH: master
     - UPDATE_ME_LOCATION: https://raw.githubusercontent.com/dead-hosts/repository-structure/master/update_me.py
     - ADMIN_LOCATION: https://raw.githubusercontent.com/dead-hosts/repository-structure/master/admin.py
 
