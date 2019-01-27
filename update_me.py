@@ -235,21 +235,21 @@ class Initiate:
         """
         try:
             _ = environ["TRAVIS_BUILD_DIR"]
-            Helpers.Command("git remote rm origin", False).execute()
+            Helpers.Command("git remote rm origin", True).execute()
             Helpers.Command(
                 "git remote add origin https://"
                 + "%s@github.com/%s.git"
                 % (environ["GH_TOKEN"], environ["TRAVIS_REPO_SLUG"]),
-                False,
+                True,
             ).execute()
             Helpers.Command(
-                'git config --global user.email "%s"' % (environ["GIT_EMAIL"]), False
+                'git config --global user.email "%s"' % (environ["GIT_EMAIL"]), True
             ).execute()
             Helpers.Command(
-                'git config --global user.name "%s"' % (environ["GIT_NAME"]), False
+                'git config --global user.name "%s"' % (environ["GIT_NAME"]), True
             ).execute()
-            Helpers.Command("git config --global push.default simple", False).execute()
-            Helpers.Command("git checkout %s" % environ["GIT_BRANCH"], False).execute()
+            Helpers.Command("git config --global push.default simple", True).execute()
+            Helpers.Command("git checkout %s" % environ["GIT_BRANCH"], True).execute()
 
             return
 
@@ -272,14 +272,14 @@ class Initiate:
             ]
 
             for command in commands:
-                Helpers.Command(command, False).execute()
+                Helpers.Command(command, True).execute()
 
             if (
-                Helpers.Command("git config core.sharedRepository", False).execute()
+                Helpers.Command("git config core.sharedRepository", True).execute()
                 == ""
             ):
                 Helpers.Command(
-                    "git config core.sharedRepository group", False
+                    "git config core.sharedRepository group", True
                 ).execute()
 
             return
@@ -333,7 +333,7 @@ class Initiate:
         else:
             to_download = "PyFunceble-dev"
 
-        Helpers.Command("pip3 install %s" % to_download, False).execute()
+        Helpers.Command("pip3 install %s" % to_download, True).execute()
 
     def download_PyFunceble(self):  # pylint: disable=invalid-name
         """
@@ -441,12 +441,12 @@ class Initiate:
 
             if path.isdir(Settings.current_directory + "output"):
                 try:
-                    Helpers.Command("PyFunceble --clean", False).execute()
+                    Helpers.Command("PyFunceble --clean", True).execute()
                 except KeyError:
                     pass
             else:
                 try:
-                    Helpers.Command("PyFunceble --directory-structure", False).execute()
+                    Helpers.Command("PyFunceble --directory-structure", True).execute()
                 except KeyError:
                     pass
 
