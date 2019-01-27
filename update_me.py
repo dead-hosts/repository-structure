@@ -333,7 +333,7 @@ class Initiate:
         else:
             to_download = "PyFunceble-dev"
 
-        Helpers.Command("pip3 install %s" % to_download, True).execute()
+        Helpers.Command("pip3 install %s" % to_download, False).execute()
 
     def download_PyFunceble(self):  # pylint: disable=invalid-name
         """
@@ -441,12 +441,12 @@ class Initiate:
 
             if path.isdir(Settings.current_directory + "output"):
                 try:
-                    Helpers.Command("PyFunceble --clean", True).execute()
+                    Helpers.Command("PyFunceble --clean", False).execute()
                 except KeyError:
                     pass
             else:
                 try:
-                    Helpers.Command("PyFunceble --directory-structure", True).execute()
+                    Helpers.Command("PyFunceble --directory-structure", False).execute()
                 except KeyError:
                     pass
 
