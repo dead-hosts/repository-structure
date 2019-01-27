@@ -235,21 +235,21 @@ class Initiate:
         """
         try:
             _ = environ["TRAVIS_BUILD_DIR"]
-            Helpers.Command("git remote rm origin", True).execute()
+            Helpers.Command("git remote rm origin", False).execute()
             Helpers.Command(
                 "git remote add origin https://"
                 + "%s@github.com/%s.git"
                 % (environ["GH_TOKEN"], environ["TRAVIS_REPO_SLUG"]),
-                True,
+                False,
             ).execute()
             Helpers.Command(
-                'git config --global user.email "%s"' % (environ["GIT_EMAIL"]), True
+                'git config --global user.email "%s"' % (environ["GIT_EMAIL"]), False
             ).execute()
             Helpers.Command(
-                'git config --global user.name "%s"' % (environ["GIT_NAME"]), True
+                'git config --global user.name "%s"' % (environ["GIT_NAME"]), False
             ).execute()
-            Helpers.Command("git config --global push.default simple", True).execute()
-            Helpers.Command("git checkout %s" % environ["GIT_BRANCH"], True).execute()
+            Helpers.Command("git config --global push.default simple", False).execute()
+            Helpers.Command("git checkout %s" % environ["GIT_BRANCH"], False).execute()
 
             return
 
@@ -275,11 +275,11 @@ class Initiate:
                 Helpers.Command(command, True).execute()
 
             if (
-                Helpers.Command("git config core.sharedRepository", True).execute()
+                Helpers.Command("git config core.sharedRepository", False).execute()
                 == ""
             ):
                 Helpers.Command(
-                    "git config core.sharedRepository group", True
+                    "git config core.sharedRepository group", False
                 ).execute()
 
             return
