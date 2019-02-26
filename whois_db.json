@@ -24,6 +24,11 @@
             "epoch": "1582070400",
             "expiration_date": "19-feb-2020",
             "state": "future"
+        },
+        "xbasfbno.info": {
+            "epoch": "1582588800",
+            "expiration_date": "25-feb-2020",
+            "state": "future"
         }
     }
 }
