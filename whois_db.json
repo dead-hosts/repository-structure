@@ -1,34 +1,32 @@
 {
-    "/home/travis/build/dead-hosts/repository-structure/Testing.list": {
-        "azvjudwr.info": {
-            "epoch": "1582070400",
-            "expiration_date": "19-feb-2020",
-            "state": "future"
-        },
-        "google.com": {
-            "epoch": "1600041600",
-            "expiration_date": "14-sep-2020",
-            "state": "future"
-        },
-        "jroqvbvw.info": {
-            "epoch": "1582070400",
-            "expiration_date": "19-feb-2020",
-            "state": "future"
-        },
-        "jyhfuqoh.info": {
-            "epoch": "1582070400",
-            "expiration_date": "19-feb-2020",
-            "state": "future"
-        },
-        "kdowqlpt.info": {
-            "epoch": "1582070400",
-            "expiration_date": "19-feb-2020",
-            "state": "future"
-        },
-        "xbasfbno.info": {
-            "epoch": "1582588800",
-            "expiration_date": "25-feb-2020",
-            "state": "future"
-        }
+    "azvjudwr.info": {
+        "epoch": "1582070400",
+        "expiration_date": "19-feb-2020",
+        "state": "future"
+    },
+    "google.com": {
+        "epoch": "1600041600",
+        "expiration_date": "14-sep-2020",
+        "state": "future"
+    },
+    "jroqvbvw.info": {
+        "epoch": "1582070400",
+        "expiration_date": "19-feb-2020",
+        "state": "future"
+    },
+    "jyhfuqoh.info": {
+        "epoch": "1582070400",
+        "expiration_date": "19-feb-2020",
+        "state": "future"
+    },
+    "kdowqlpt.info": {
+        "epoch": "1582070400",
+        "expiration_date": "19-feb-2020",
+        "state": "future"
+    },
+    "xbasfbno.info": {
+        "epoch": "1582588800",
+        "expiration_date": "25-feb-2020",
+        "state": "future"
     }
 }
