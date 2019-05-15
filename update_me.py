@@ -997,7 +997,7 @@ if __name__ == "__main__":
         from yaml import dump as yaml_dump
         from yaml import safe_load as yaml_load
     except ModuleNotFoundError:
-        Helpers.Command("pip3 install pyyaml")
+        Helpers.Command("pip3 install pyyaml").execute()
 
         from yaml import dump as yaml_dump
         from yaml import safe_load as yaml_load
