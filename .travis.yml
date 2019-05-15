@@ -29,7 +29,7 @@ addons:
 
 install:
   - pip3 install --upgrade pip
-  - pip3 install requests
+  - pip3 install requests pyyaml
 
 before_script:
   - if [[ ! -f .administrators ]]; then wget "${UPDATE_ME_LOCATION}" -o /dev/null -O update_me.py && chmod +x update_me.py; else echo "update_me not downloaded :)"; fi
