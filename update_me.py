@@ -997,7 +997,7 @@ if __name__ == "__main__":
         from yaml import dump as yaml_dump
         from yaml import safe_load as yaml_load
     except ImportError:
-        Helpers.Command("pip install pyyaml")
+        Helpers.Command("pip3 install pyyaml")
 
         from yaml import dump as yaml_dump
         from yaml import safe_load as yaml_load
