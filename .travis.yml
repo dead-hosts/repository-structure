@@ -32,7 +32,7 @@ install:
   - pip3 install dead-hosts-launcher
 
 script:
-  - dead_hosts_infrastructure_launcher
+  - dead_hosts_launcher
 
 notifications:
   email:
