@@ -7,20 +7,13 @@ env:
     - GIT_BRANCH: dev
     - UPDATE_ME_LOCATION: https://raw.githubusercontent.com/dead-hosts/repository-structure/master/update_me.py
     - ADMIN_LOCATION: https://raw.githubusercontent.com/dead-hosts/repository-structure/master/admin.py
+  matrix:
+    - PYTHON_VERSION="3.7.3"
 
-dist: xenial
+language: generic
 sudo: required
-
-language: python
-
-python:
-  - "3.7"
-
-matrix:
-  fast_finish: true
-
-cache:
-  - pip
+os:
+  - linux
 
 addons:
   apt:
@@ -28,8 +21,17 @@ addons:
       - dos2unix
 
 install:
-  - pip3 install --upgrade pip
-  - pip3 install dead-hosts-launcher
+  - export PATH="${HOME}/miniconda/bin:${PATH}"
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p ${HOME}/miniconda
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda create -q -n launcher-environment python="${PYTHON_VERSION}"
+  - source activate launcher-environment
+  - python -VV
+  - pip --version
+  - pip install dead-hosts-launcher
 
 script:
   - dead_hosts_launcher
