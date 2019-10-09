@@ -60,66 +60,59 @@
         }
     },
     "/home/travis/build/dead-hosts/repository-structure/domains.list": {
-        "1565611553": {},
-        "1566057976": {},
-        "1566203765": {},
-        "1566290481": {},
-        "1566463067": {},
-        "1566549485": {},
-        "1566722338": {},
-        "1566895217": {},
-        "1566981670": {},
-        "1567154446": {},
-        "1567327266": {},
-        "1567413721": {},
-        "1567500158": {},
-        "1567586611": {},
-        "1567673057": {},
-        "1567759485": {},
-        "1567845934": {},
-        "1568018804": {},
-        "1568192050": {},
-        "1568364554": {},
-        "1568473142": {},
-        "1568623806": {},
-        "1568796600": {},
-        "1568969475": {},
-        "1569142595": {},
-        "1569315123": {},
-        "1569401560": {},
-        "1569574389": {},
-        "1569747617": {},
-        "1569920047": {},
-        "1570092922": {},
-        "1570268970": {},
-        "1570441445": {
-            "247?realmedia.com": "INVALID",
-            "adblade.com,popup": "INVALID",
-            "adtrackone.eu$document": "INVALID",
-            "allosexe-.myblox.fr": "INACTIVE",
-            "alyssa-.ifrance.com": "INACTIVE",
-            "cdnfile.xyz": "INACTIVE",
-            "durl=px.moatads.com": "INVALID",
+        "1570657800": {
+            "abc.pema.cl": "INACTIVE"
+        },
+        "1570657806": {
+            "cdn.rove.cl": "INACTIVE",
+            "crywebber.github.io": "INACTIVE"
+        },
+        "1570657818": {
+            "metrika.ron.si": "INACTIVE"
+        },
+        "1570657840": {
+            "static.hk.rs": "INACTIVE"
+        },
+        "1570657841": {
             "free‐celebrity‐tube.com": "INACTIVE",
             "hans.pr0gramm.com": "INACTIVE",
-            "host.d-ns.ga": "INACTIVE",
-            "hurensohn.pr0gramm.com": "INACTIVE",
-            "i-52b.-xxx.ut.bench.utorrent.com": "INVALID",
-            "javakiba.org*": "INVALID",
             "m.pr0gramm.com": "INACTIVE",
-            "mailto:info@mypornbible.com": "INVALID",
-            "mangas-porno-.has.it": "INACTIVE",
-            "moherland.pl,": "INVALID",
-            "public‐sluts.net": "INACTIVE",
-            "px.moatads.com,z.moatads.com": "INVALID",
-            "securepubads.g.doubleclick.net": "INACTIVE",
-            "st.kjli.fi": "INACTIVE",
-            "telemetry.appex.bing.net:443": "INVALID",
-            "web.die-news.pw": "INACTIVE",
-            "websitealive[0-9].com": "INVALID",
+            "securepubads.g.doubleclick.net": "INACTIVE"
+        },
+        "1570657853": {
+            "host.d-ns.ga": "INACTIVE"
+        },
+        "1570657854": {
+            "adtrackone.eu$document": "INVALID",
+            "i-52b.-xxx.ut.bench.utorrent.com": "INVALID",
             "www.free‐celebrity‐tube.com": "INACTIVE",
             "www.just-anchor.com?": "INVALID",
-            "www.public‐sluts.net": "INACTIVE",
+            "www.public‐sluts.net": "INACTIVE"
+        },
+        "1570657860": {
+            "247?realmedia.com": "INVALID",
+            "cdnfile.xyz": "INACTIVE",
+            "javakiba.org*": "INVALID",
+            "px.moatads.com,z.moatads.com": "INVALID",
+            "telemetry.appex.bing.net:443": "INVALID"
+        },
+        "1570657861": {
+            "adblade.com,popup": "INVALID",
+            "durl=px.moatads.com": "INVALID",
+            "mailto:info@mypornbible.com": "INVALID",
+            "mangas-porno-.has.it": "INACTIVE",
+            "moherland.pl,": "INVALID"
+        },
+        "1570657863": {
+            "alyssa-.ifrance.com": "INACTIVE",
+            "hurensohn.pr0gramm.com": "INACTIVE",
+            "public‐sluts.net": "INACTIVE",
+            "st.kjli.fi": "INACTIVE",
+            "web.die-news.pw": "INACTIVE"
+        },
+        "1570657864": {
+            "allosexe-.myblox.fr": "INACTIVE",
+            "websitealive[0-9].com": "INVALID",
             "xmr.-eu1.nanopool.org": "INVALID"
         }
     }
