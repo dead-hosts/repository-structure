@@ -60,59 +60,57 @@
         }
     },
     "/home/travis/build/dead-hosts/repository-structure/domains.list": {
-        "1571650621": {
+        "1571742084": {
             "247?realmedia.com": "INVALID",
             "abc.pema.cl": "INACTIVE",
             "adblade.com,popup": "INVALID",
             "adtrackone.eu$document": "INVALID",
             "allosexe-.myblox.fr": "INACTIVE"
         },
-        "1571650623": {
+        "1571742086": {
             "alyssa-.ifrance.com": "INACTIVE"
         },
-        "1571650637": {
-            "cdn.rove.cl": "INACTIVE",
+        "1571742100": {
             "cdnfile.xyz": "INACTIVE"
         },
-        "1571650638": {
+        "1571742101": {
+            "cdn.rove.cl": "INACTIVE",
             "crywebber.github.io": "INACTIVE",
             "durl=px.moatads.com": "INVALID"
         },
-        "1571650639": {
-            "free‐celebrity‐tube.com": "INACTIVE",
+        "1571742102": {
+            "free‐celebrity‐tube.com": "INACTIVE"
+        },
+        "1571742103": {
             "hans.pr0gramm.com": "INACTIVE"
         },
-        "1571650654": {
+        "1571742119": {
             "host.d-ns.ga": "INACTIVE",
-            "hurensohn.pr0gramm.com": "INACTIVE"
-        },
-        "1571650655": {
+            "hurensohn.pr0gramm.com": "INACTIVE",
             "i-52b.-xxx.ut.bench.utorrent.com": "INVALID",
             "javakiba.org*": "INVALID"
         },
-        "1571650672": {
-            "mailto:info@mypornbible.com": "INVALID"
-        },
-        "1571650673": {
+        "1571742130": {
             "m.pr0gramm.com": "INACTIVE",
+            "mailto:info@mypornbible.com": "INVALID",
             "mangas-porno-.has.it": "INACTIVE",
             "metrika.ron.si": "INACTIVE",
             "moherland.pl,": "INVALID"
         },
-        "1571650686": {
-            "public‐sluts.net": "INACTIVE",
-            "px.moatads.com,z.moatads.com": "INVALID",
-            "securepubads.g.doubleclick.net": "INACTIVE"
+        "1571742143": {
+            "public‐sluts.net": "INACTIVE"
         },
-        "1571650687": {
+        "1571742144": {
+            "px.moatads.com,z.moatads.com": "INVALID",
+            "securepubads.g.doubleclick.net": "INACTIVE",
             "st.kjli.fi": "INACTIVE",
             "static.hk.rs": "INACTIVE",
-            "telemetry.appex.bing.net:443": "INVALID",
+            "telemetry.appex.bing.net:443": "INVALID"
+        },
+        "1571742145": {
             "web.die-news.pw": "INACTIVE",
             "websitealive[0-9].com": "INVALID",
-            "www.free‐celebrity‐tube.com": "INACTIVE"
-        },
-        "1571650688": {
+            "www.free‐celebrity‐tube.com": "INACTIVE",
             "www.just-anchor.com?": "INVALID",
             "www.public‐sluts.net": "INACTIVE",
             "xmr.-eu1.nanopool.org": "INVALID"
