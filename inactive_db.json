@@ -60,38 +60,6 @@
         }
     },
     "/home/travis/build/dead-hosts/repository-structure/domains.list": {
-        "1573031623": {
-            "247?realmedia.com": "INVALID",
-            "abc.pema.cl": "INACTIVE",
-            "adblade.com,popup": "INVALID",
-            "adtrackone.eu$document": "INVALID"
-        },
-        "1573031624": {
-            "allosexe-.myblox.fr": "INACTIVE"
-        },
-        "1573031625": {
-            "alyssa-.ifrance.com": "INACTIVE"
-        },
-        "1573031635": {
-            "cdnfile.xyz": "INACTIVE"
-        },
-        "1573031636": {
-            "cdn.rove.cl": "INACTIVE",
-            "crywebber.github.io": "INACTIVE",
-            "durl=px.moatads.com": "INVALID"
-        },
-        "1573031637": {
-            "free‐celebrity‐tube.com": "INACTIVE"
-        },
-        "1573031638": {
-            "hans.pr0gramm.com": "INACTIVE"
-        },
-        "1573031649": {
-            "host.d-ns.ga": "INACTIVE",
-            "hurensohn.pr0gramm.com": "INACTIVE",
-            "i-52b.-xxx.ut.bench.utorrent.com": "INVALID",
-            "javakiba.org*": "INVALID"
-        },
         "1573031661": {
             "mailto:info@mypornbible.com": "INVALID"
         },
@@ -122,6 +90,36 @@
         },
         "1573031680": {
             "xmr.-eu1.nanopool.org": "INVALID"
+        },
+        "1573118058": {
+            "247?realmedia.com": "INVALID",
+            "abc.pema.cl": "INACTIVE",
+            "adblade.com,popup": "INVALID",
+            "adtrackone.eu$document": "INVALID",
+            "allosexe-.myblox.fr": "INACTIVE"
+        },
+        "1573118060": {
+            "alyssa-.ifrance.com": "INACTIVE"
+        },
+        "1573118072": {
+            "cdnfile.xyz": "INACTIVE"
+        },
+        "1573118075": {
+            "cdn.rove.cl": "INACTIVE",
+            "crywebber.github.io": "INACTIVE",
+            "durl=px.moatads.com": "INVALID"
+        },
+        "1573118076": {
+            "free‐celebrity‐tube.com": "INACTIVE"
+        },
+        "1573118077": {
+            "hans.pr0gramm.com": "INACTIVE"
+        },
+        "1573118090": {
+            "host.d-ns.ga": "INACTIVE",
+            "hurensohn.pr0gramm.com": "INACTIVE",
+            "i-52b.-xxx.ut.bench.utorrent.com": "INVALID",
+            "javakiba.org*": "INVALID"
         }
     }
 }
