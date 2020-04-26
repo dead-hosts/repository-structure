@@ -1,104 +1,489 @@
 {
     "/home/travis/build/dead-hosts/repository-structure/Testing.list": {
-        "1558635360": {},
-        "1558635364": {},
-        "1558635365": {},
-        "1558635371": {},
-        "1558635374": {},
-        "1558635375": {},
-        "1558635377": {},
-        "1565297221": {},
-        "1565383734": {
-            "1-1-1-.ib.adnxs.com": "INACTIVE",
-            "247?realmedia.com": "INVALID",
-            "adblade.com,popup": "INVALID",
-            "adtrackone.eu$document": "INVALID",
-            "allosexe-.myblox.fr": "INACTIVE",
-            "alyssa-.ifrance.com": "INACTIVE",
-            "cdnfile.xyz": "INACTIVE",
-            "durl=px.moatads.com": "INVALID",
-            "film-porno-.ze.cx": "INACTIVE",
-            "free‐celebrity‐tube.com": "INVALID",
-            "goreanharbourreysa-.4ya.nl": "INACTIVE",
-            "hans.pr0gramm.com": "INACTIVE",
-            "host.d-ns.ga": "INACTIVE",
-            "hurensohn.pr0gramm.com": "INACTIVE",
-            "i-52b.-xxx.ut.bench.utorrent.com": "INVALID",
-            "javakiba.org*": "INVALID",
-            "m.pr0gramm.com": "INACTIVE",
-            "mailto:info@mypornbible.com": "INVALID",
-            "mangas-porno-.has.it": "INACTIVE",
-            "moherland.pl,": "INVALID",
-            "paris-.blogspot.ca": "INACTIVE",
-            "paris-.blogspot.ch": "INACTIVE",
-            "paris-.blogspot.co.id": "INACTIVE",
-            "paris-.blogspot.co.uk": "INACTIVE",
-            "paris-.blogspot.com": "INACTIVE",
-            "paris-.blogspot.com.ar": "INACTIVE",
-            "paris-.blogspot.com.br": "INACTIVE",
-            "paris-.blogspot.com.es": "INACTIVE",
-            "paris-.blogspot.com.tr": "INACTIVE",
-            "paris-.blogspot.de": "INACTIVE",
-            "paris-.blogspot.gr": "INACTIVE",
-            "paris-.blogspot.it": "INACTIVE",
-            "paris-.blogspot.mx": "INACTIVE",
-            "paris-.blogspot.no": "INACTIVE",
-            "paris-.blogspot.pt": "INACTIVE",
-            "paris-.blogspot.sk": "INACTIVE",
-            "public‐sluts.net": "INVALID",
-            "px.moatads.com,z.moatads.com": "INVALID",
-            "securepubads.g.doubleclick.net": "INACTIVE",
-            "sexchat-.startspin.nl": "INACTIVE",
-            "st.kjli.fi": "INACTIVE",
-            "telemetry.appex.bing.net:443": "INVALID",
-            "web.die-news.pw": "INACTIVE",
-            "websitealive[0-9].com": "INVALID",
-            "www.free‐celebrity‐tube.com": "INVALID",
-            "www.just-anchor.com?": "INVALID",
-            "www.public‐sluts.net": "INVALID",
-            "xmr.-eu1.nanopool.org": "INVALID"
+        "1-1-1-.ib.adnxs.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "247?realmedia.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "adblade.com,popup": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "adtrackone.eu$document": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "allosexe-.myblox.fr": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "alyssa-.ifrance.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "cdnfile.xyz": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "durl=px.moatads.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "film-porno-.ze.cx": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "free‐celebrity‐tube.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "goreanharbourreysa-.4ya.nl": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "hans.pr0gramm.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "host.d-ns.ga": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "hurensohn.pr0gramm.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "i-52b.-xxx.ut.bench.utorrent.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "javakiba.org*": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "m.pr0gramm.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "mailto:info@mypornbible.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "mangas-porno-.has.it": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "moherland.pl,": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "paris-.blogspot.ca": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.ch": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.co.id": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.co.uk": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.com.ar": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.com.br": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.com.es": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.com.tr": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.de": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.gr": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.it": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.mx": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.no": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.pt": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "paris-.blogspot.sk": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "public‐sluts.net": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "px.moatads.com,z.moatads.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "securepubads.g.doubleclick.net": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "sexchat-.startspin.nl": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "st.kjli.fi": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "telemetry.appex.bing.net:443": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "web.die-news.pw": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INACTIVE"
+        },
+        "websitealive[0-9].com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "www.free‐celebrity‐tube.com": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "www.just-anchor.com?": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "www.public‐sluts.net": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
+        },
+        "xmr.-eu1.nanopool.org": {
+            "included_at_epoch": 1565383734.0,
+            "included_at_iso": "2019-08-09T20:48:54",
+            "last_retested_at_epoch": 1565383734.0,
+            "last_retested_at_iso": "2019-08-09T20:48:54",
+            "status": "INVALID"
         }
     },
     "/home/travis/build/dead-hosts/repository-structure/domains.list": {
-        "1573118076": {
-            "free‐celebrity‐tube.com": "INACTIVE"
+        "247?realmedia.com": {
+            "included_at_epoch": 1587914200.390923,
+            "included_at_iso": "2020-04-26T15:16:40.390923",
+            "last_retested_at_epoch": 1587914200.390923,
+            "last_retested_at_iso": "2020-04-26T15:16:40.390923",
+            "status": "INVALID"
         },
-        "1573124600": {
-            "public‐sluts.net": "INACTIVE"
+        "adblade.com,popup": {
+            "included_at_epoch": 1587914200.39296,
+            "included_at_iso": "2020-04-26T15:16:40.392960",
+            "last_retested_at_epoch": 1587914200.39296,
+            "last_retested_at_iso": "2020-04-26T15:16:40.392960",
+            "status": "INVALID"
         },
-        "1573124602": {
-            "www.free‐celebrity‐tube.com": "INACTIVE",
-            "www.public‐sluts.net": "INACTIVE"
+        "adtrackone.eu$document": {
+            "included_at_epoch": 1587914200.396138,
+            "included_at_iso": "2020-04-26T15:16:40.396138",
+            "last_retested_at_epoch": 1587914200.396138,
+            "last_retested_at_iso": "2020-04-26T15:16:40.396138",
+            "status": "INVALID"
         },
-        "1584616192": {
-            "247?realmedia.com": "INVALID",
-            "adblade.com,popup": "INVALID",
-            "adtrackone.eu$document": "INVALID",
-            "allosexe-.myblox.fr": "INACTIVE",
-            "alyssa-.ifrance.com": "INACTIVE",
-            "cdnfile.xyz": "INACTIVE",
-            "crywebber.github.io": "INACTIVE",
-            "hans.pr0gramm.com": "INACTIVE",
-            "host.d-ns.ga": "INACTIVE",
-            "hurensohn.pr0gramm.com": "INACTIVE",
-            "javakiba.org*": "INVALID",
-            "m.pr0gramm.com": "INACTIVE",
-            "mangas-porno-.has.it": "INACTIVE",
-            "moherland.pl,": "INVALID",
-            "st.kjli.fi": "INACTIVE",
-            "static.hk.rs": "INACTIVE",
-            "telemetry.appex.bing.net:443": "INVALID",
-            "web.die-news.pw": "INACTIVE",
-            "websitealive[0-9].com": "INVALID"
+        "allosexe-.myblox.fr": {
+            "included_at_epoch": 1587914200.39807,
+            "included_at_iso": "2020-04-26T15:16:40.398070",
+            "last_retested_at_epoch": 1587914200.39807,
+            "last_retested_at_iso": "2020-04-26T15:16:40.398070",
+            "status": "INACTIVE"
         },
-        "1584616194": {
-            "www.just-anchor.com?": "INVALID"
+        "alyssa-.ifrance.com": {
+            "included_at_epoch": 1587914200.401831,
+            "included_at_iso": "2020-04-26T15:16:40.401831",
+            "last_retested_at_epoch": 1587914200.401831,
+            "last_retested_at_iso": "2020-04-26T15:16:40.401831",
+            "status": "INACTIVE"
         },
-        "1584702181": {
-            "www.xn--freecelebritytube-tz2jja.com": "INACTIVE",
-            "www.xn--publicsluts-qf3f.net": "INACTIVE",
-            "xn--freecelebritytube-tz2jja.com": "INACTIVE",
-            "xn--publicsluts-qf3f.net": "INACTIVE"
+        "cdnfile.xyz": {
+            "included_at_epoch": 1587914200.403936,
+            "included_at_iso": "2020-04-26T15:16:40.403936",
+            "last_retested_at_epoch": 1587914200.403936,
+            "last_retested_at_iso": "2020-04-26T15:16:40.403936",
+            "status": "INACTIVE"
+        },
+        "crywebber.github.io": {
+            "included_at_epoch": 1587914200.407462,
+            "included_at_iso": "2020-04-26T15:16:40.407462",
+            "last_retested_at_epoch": 1587914200.407462,
+            "last_retested_at_iso": "2020-04-26T15:16:40.407462",
+            "status": "INACTIVE"
+        },
+        "hans.pr0gramm.com": {
+            "included_at_epoch": 1587914200.4182,
+            "included_at_iso": "2020-04-26T15:16:40.418200",
+            "last_retested_at_epoch": 1587914200.4182,
+            "last_retested_at_iso": "2020-04-26T15:16:40.418200",
+            "status": "INACTIVE"
+        },
+        "host.d-ns.ga": {
+            "included_at_epoch": 1587914200.422938,
+            "included_at_iso": "2020-04-26T15:16:40.422938",
+            "last_retested_at_epoch": 1587914200.422938,
+            "last_retested_at_iso": "2020-04-26T15:16:40.422938",
+            "status": "INACTIVE"
+        },
+        "hurensohn.pr0gramm.com": {
+            "included_at_epoch": 1587914200.42096,
+            "included_at_iso": "2020-04-26T15:16:40.420960",
+            "last_retested_at_epoch": 1587914200.42096,
+            "last_retested_at_iso": "2020-04-26T15:16:40.420960",
+            "status": "INACTIVE"
+        },
+        "javakiba.org*": {
+            "included_at_epoch": 1587914200.425739,
+            "included_at_iso": "2020-04-26T15:16:40.425739",
+            "last_retested_at_epoch": 1587914200.425739,
+            "last_retested_at_iso": "2020-04-26T15:16:40.425739",
+            "status": "INVALID"
+        },
+        "m.pr0gramm.com": {
+            "included_at_epoch": 1587914200.431714,
+            "included_at_iso": "2020-04-26T15:16:40.431714",
+            "last_retested_at_epoch": 1587914200.431714,
+            "last_retested_at_iso": "2020-04-26T15:16:40.431714",
+            "status": "INACTIVE"
+        },
+        "mangas-porno-.has.it": {
+            "included_at_epoch": 1587914200.438277,
+            "included_at_iso": "2020-04-26T15:16:40.438277",
+            "last_retested_at_epoch": 1587914200.438277,
+            "last_retested_at_iso": "2020-04-26T15:16:40.438277",
+            "status": "INACTIVE"
+        },
+        "moherland.pl,": {
+            "included_at_epoch": 1587914200.440365,
+            "included_at_iso": "2020-04-26T15:16:40.440365",
+            "last_retested_at_epoch": 1587914200.440365,
+            "last_retested_at_iso": "2020-04-26T15:16:40.440365",
+            "status": "INVALID"
+        },
+        "st.kjli.fi": {
+            "included_at_epoch": 1587914200.467065,
+            "included_at_iso": "2020-04-26T15:16:40.467065",
+            "last_retested_at_epoch": 1587914200.467065,
+            "last_retested_at_iso": "2020-04-26T15:16:40.467065",
+            "status": "INACTIVE"
+        },
+        "static.hk.rs": {
+            "included_at_epoch": 1587914200.468827,
+            "included_at_iso": "2020-04-26T15:16:40.468827",
+            "last_retested_at_epoch": 1587914200.468827,
+            "last_retested_at_iso": "2020-04-26T15:16:40.468827",
+            "status": "INACTIVE"
+        },
+        "telemetry.appex.bing.net:443": {
+            "included_at_epoch": 1587914200.471009,
+            "included_at_iso": "2020-04-26T15:16:40.471009",
+            "last_retested_at_epoch": 1587914200.471009,
+            "last_retested_at_iso": "2020-04-26T15:16:40.471009",
+            "status": "INVALID"
+        },
+        "web.die-news.pw": {
+            "included_at_epoch": 1587914200.473693,
+            "included_at_iso": "2020-04-26T15:16:40.473693",
+            "last_retested_at_epoch": 1587914200.473693,
+            "last_retested_at_iso": "2020-04-26T15:16:40.473693",
+            "status": "INACTIVE"
+        },
+        "websitealive[0-9].com": {
+            "included_at_epoch": 1587914200.476931,
+            "included_at_iso": "2020-04-26T15:16:40.476931",
+            "last_retested_at_epoch": 1587914200.476931,
+            "last_retested_at_iso": "2020-04-26T15:16:40.476931",
+            "status": "INVALID"
+        },
+        "xn--freecelebritytube-tz2jja.com": {
+            "included_at_epoch": 1587914200.41468,
+            "included_at_iso": "2020-04-26T15:16:40.414680",
+            "last_retested_at_epoch": 1587914200.41468,
+            "last_retested_at_iso": "2020-04-26T15:16:40.414680",
+            "status": "INACTIVE"
+        },
+        "xn--publicsluts-qf3f.net": {
+            "included_at_epoch": 1587914200.460783,
+            "included_at_iso": "2020-04-26T15:16:40.460783",
+            "last_retested_at_epoch": 1587914200.460783,
+            "last_retested_at_iso": "2020-04-26T15:16:40.460783",
+            "status": "INACTIVE"
         }
     }
 }
