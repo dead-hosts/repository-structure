@@ -5,8 +5,8 @@ addons:
 env:
     global:
     -   secure: uVlzwFWSwuOSynoA36ezobQ34BJSyh5KbnELSqBR7miMdy0o/wNkTt9NsgUrd2mVgWCcJYbOhOExJ3Lq147i0rnMcIPVXDEvBAafzrj77n55xWLJ8NBisqiqADzxq33m/ZMFaC2ebztXLU2utRbSHBpL7EMm/QK/aVnwGurokgA6vFMNSYFQpxVq++k+C0EdotieokerUsRzPR7q3iNQR1tazVKHUGGIYGVT6WOzxu4OejkqNM1ycLRGpYHd804+Cb1kJK6OfLMNvYuDaic/mjmrYzONzO4Fdk3gXy+qCxl9SG1+obEKuhlTmX1cjYyIMbHQOxG9uedntJfyeispoSq59Rgeu7qLtqCojjYWZImSNA9JntMM3lUZWd359YO4gHtbvbi6lpClvqcKXscybSbPR6rGjqBA1MhHSMWjQiDL6/3nd40uzaFsaKoOvMIy4bok1z5Slh5TEisMoAhSytXtA/sXoM5htPeew7JESocX1n1WsbP7bj5atRHpuPpTU070QliWukkrw7FhBF/wv+acVQGYQwD8XPcTMXhPW1KVl6sVQbnBj5+XGY+t6iI2WzjorY1K6VaVSq6YI8Mumc4zpcueoFgvV78Ww4HO1tjBPsZbOwB8LFi2uO8DjzH4Zw6zir7F/h8vg33qVKZ+hCtpw42bUopW2gaukl+ft5g=
-    -   GIT_NAME: Travis CI
-    -   GIT_EMAIL: dead-hosts@funilrys.com
+    -   GIT_NAME: Dead-Hosts Bot
+    -   GIT_EMAIL: dead-hosts@outlook.com
     -   TRAVIS_REPO_SLUG: dead-hosts/repository-structure
     -   GIT_BRANCH: master
     matrix:
