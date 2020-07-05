@@ -4,6 +4,11 @@
         "expiration_date": "19-feb-2021",
         "state": "future"
     },
+    "cdnfile.xyz": {
+        "epoch": 1625356800.0,
+        "expiration_date": "04-jul-2021",
+        "state": "future"
+    },
     "google.com": {
         "epoch": 1600041600.0,
         "expiration_date": "14-sep-2020",
