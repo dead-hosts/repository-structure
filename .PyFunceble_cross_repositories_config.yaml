@@ -18,7 +18,7 @@ debug: false
 dns_lookup_over_tcp: false
 dns_server:
 - 8.8.8.8
-- 8.4.4.8
+- 8.8.4.4
 filter: ''
 generate_complements: false
 generate_hosts: true
