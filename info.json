@@ -2,14 +2,14 @@
     "currently_under_test": false,
     "custom_pyfunceble_config": {},
     "days_until_next_test": 0.0,
-    "finish_datetime": "2020-08-27T00:00:31.678403",
-    "finish_timestamp": 1598486431.678403,
-    "last_download_datetime": "2020-08-26T23:59:47.734644",
-    "last_download_timestamp": 1598486387.734644,
-    "latest_part_finish_datetime": "2020-08-27T00:00:31.678403",
-    "latest_part_finish_timestamp": 1598486431.678403,
-    "latest_part_start_datetime": "2020-08-26T23:59:47.743367",
-    "latest_part_start_timestamp": 1598486387.743367,
+    "finish_datetime": "2020-08-27T23:52:54.845672",
+    "finish_timestamp": 1598572374.845672,
+    "last_download_datetime": "2020-08-27T23:52:19.427638",
+    "last_download_timestamp": 1598572339.427638,
+    "latest_part_finish_datetime": "2020-08-27T23:52:54.845672",
+    "latest_part_finish_timestamp": 1598572374.845672,
+    "latest_part_start_datetime": "2020-08-27T23:52:19.433820",
+    "latest_part_start_timestamp": 1598572339.43382,
     "live_update": true,
     "name": "repository-structure",
     "own_management": false,
@@ -17,6 +17,6 @@
         "@funilrys"
     ],
     "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/.travis/lists/simple",
-    "start_datetime": "2020-08-26T23:59:47.739674",
-    "start_timestamp": 1598486387.739674
+    "start_datetime": "2020-08-27T23:52:19.431316",
+    "start_timestamp": 1598572339.431316
 }
