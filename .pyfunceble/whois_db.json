@@ -10,8 +10,9 @@
         "state": "future"
     },
     "google.com": {
-        "epoch": 1600041600.0,
-        "expiration_date": "14-sep-2020",
+        "epoch": 1852502400.0,
+        "expiration_date": "14-sep-2028",
+        "server": "whois.verisign-grs.com",
         "state": "future"
     },
     "jroqvbvw.info": {
