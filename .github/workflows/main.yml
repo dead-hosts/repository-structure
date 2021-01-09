@@ -49,4 +49,4 @@ jobs:
 
       - name: Run Launcher
         run: |
-          dead-hosts-launcher
+          env && dead-hosts-launcher
