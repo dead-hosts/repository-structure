@@ -29,7 +29,7 @@ cli_testing:
 
   # Sets the number of maximal workers to use.
   # If set to null, the system use: CPU Cores * 5.
-  max_workers: 1
+  max_workers: null
 
   # Activates the automatic continuation after a break or shortage.
   autocontinue: True
@@ -46,7 +46,7 @@ cli_testing:
   complements: False
 
   # Sets the cooldown time to apply between each tests.
-  cooldown_time: 3.0
+  cooldown_time: 0.0
 
   # Sets the Database Connector type to use.
   # Available: csv | mariadb | mysql
@@ -69,7 +69,7 @@ cli_testing:
 
     # Activates the continuous integration mode.
     # WARNING: Do not activate without asking or knowing what you are doing.
-    active: True
+    active: False
 
     # Sets the commit message to apply everytime except for the last one.
     commit_message: "PyFunceble - AutoSave"
@@ -102,7 +102,7 @@ cli_testing:
     dots: False
 
     # Activates the printing of the execution time.
-    execution_time: True 
+    execution_time: False
 
     # Activates the output of the percentage information.
     percentage: True
@@ -166,7 +166,7 @@ cli_testing:
     no_file: False
 
     # Activates the generation of the hosts file(s).
-    hosts: False
+    hosts: True
 
     # Activates the generation of the plain (or raw) file(s).
     plain: True
