@@ -16,7 +16,7 @@
     "ping": [
         "@funilrys"
     ],
-    "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/.travis/lists/simple",
+    "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/examples/lists/simple",
     "start_datetime": "2020-12-28T00:50:21.375438",
     "start_timestamp": 1609116621.375438
 }
