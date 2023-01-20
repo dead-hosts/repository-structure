@@ -1,6 +1,4 @@
 idna_subject,checker_type,destination,tested_at
-static.hk.rs,AVAILABILITY,origin.list,2023-01-18 05:02:08.117265
-xbasfbno.info,AVAILABILITY,origin.list,2023-01-18 05:02:08.260982
 telemetry.appex.bing.net:443,AVAILABILITY,origin.list,2023-01-19 05:02:14.232778
 "moherland.pl,",AVAILABILITY,origin.list,2023-01-19 05:02:14.257820
 javakiba.org*,AVAILABILITY,origin.list,2023-01-19 05:02:14.258755
@@ -25,3 +23,5 @@ mangas-porno-.has.it,AVAILABILITY,origin.list,2023-01-19 05:02:16.241289
 adtrackone.eu$document,AVAILABILITY,origin.list,2023-01-19 05:02:16.446432
 websitealive[0-9].com,AVAILABILITY,origin.list,2023-01-19 05:02:16.456506
 st.kjli.fi,AVAILABILITY,origin.list,2023-01-19 05:02:16.623613
+xbasfbno.info,AVAILABILITY,origin.list,2023-01-20 05:02:00.446501
+static.hk.rs,AVAILABILITY,origin.list,2023-01-20 05:02:00.943082
