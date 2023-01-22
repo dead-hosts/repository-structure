@@ -1,6 +1,4 @@
 idna_subject,checker_type,destination,tested_at
-xbasfbno.info,AVAILABILITY,origin.list,2023-01-20 05:02:00.446501
-static.hk.rs,AVAILABILITY,origin.list,2023-01-20 05:02:00.943082
 telemetry.appex.bing.net:443,AVAILABILITY,origin.list,2023-01-21 05:02:05.250624
 "moherland.pl,",AVAILABILITY,origin.list,2023-01-21 05:02:05.350650
 film-porno-.ze.cx,AVAILABILITY,origin.list,2023-01-21 05:02:05.638329
@@ -25,3 +23,5 @@ adtrackone.eu$document,AVAILABILITY,origin.list,2023-01-21 05:02:07.816719
 crywebber.github.io,AVAILABILITY,origin.list,2023-01-21 05:02:07.894857
 websitealive[0-9].com,AVAILABILITY,origin.list,2023-01-21 05:02:08.226671
 st.kjli.fi,AVAILABILITY,origin.list,2023-01-21 05:02:08.765046
+xbasfbno.info,AVAILABILITY,origin.list,2023-01-22 05:01:55.822789
+static.hk.rs,AVAILABILITY,origin.list,2023-01-22 05:01:56.243060
