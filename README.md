@@ -1,20 +1,8 @@
-# Repository structure.
-
-## Note about this part
-
-**This part should not be into the new created repository.**
+# Repository structure
 
 ## About this repository
 
 This is an example repository which represent the way [all other repository which use Travis CI](https://travis-ci.org/dead-hosts) should be structured.
-
---------------------------------------------------------------------------------
-
-# About [username@repositoryname]
-
-[![Build Status](https://travis-ci.org/dead-hosts/repository-structure.svg?branch=master)](https://travis-ci.org/dead-hosts/repository-structure)
-
-[Description from the original repository]
 
 --------------------------------------------------------------------------------
 
@@ -24,6 +12,7 @@ This is an example repository which represent the way [all other repository whic
 Indeed, the idea was to test - with the help of PyFunceble and Travis CI - hosts file, list of domains or even bocklist to have a list of only active domains or IP.
 
 Today, we provide our infrastructure for anybody who want it. [Just ask](https://github.com/dead-hosts/dev-center/issues/new?template=inclusion-request.md)!
+
 
 --------------------------------------------------------------------------------
 
