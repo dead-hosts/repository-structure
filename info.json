@@ -16,6 +16,11 @@
     "ping": [
         "@funilrys"
     ],
+    "platform_container_id": null,
+    "platform_description": "Imported from Dead-Hosts legacy infrastructure.",
+    "platform_optout": false,
+    "platform_remote_source_id": null,
+    "platform_shortname": "repository-structure",
     "raw_link": "https://raw.githubusercontent.com/funilrys/PyFunceble/master/examples/lists/simple",
     "repo": "dead-hosts/repository-structure",
     "start_datetime": "2020-12-28T00:50:21.375438",
