@@ -16,6 +16,7 @@
     "ping": [
         "@funilrys"
     ],
+    "ping_enabled": false,
     "platform_container_id": null,
     "platform_container_name": "repository-structure",
     "platform_description": "Imported from Dead-Hosts legacy infrastructure.",
